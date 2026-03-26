@@ -29,9 +29,6 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
     - navigation.tracking
     - navigation.indexes
     - content.code.copy
@@ -46,6 +43,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+hooks:
+  - mkdocs_hooks/i18n_theme_compat.py
 
 plugins:
   - search

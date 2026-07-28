@@ -35,9 +35,9 @@ Wat er in het veld **Title** staat wordt automatisch toegevoegd aan de inhoudsop
 
 Aan de rechterkant in dit scherm heb je een paar knoppen om het beeld aan te passen.
 
-* [Taalknop](/badge_2026/assets/uploads/docs_lang.png) De taalknop, deze toont/verbergt het rechtse taalveld.
-* [Voorbeeldknop](/badge_2026/assets/uploads/docs_preview.png) De voorbeeldknop, deze toont/verbergt een voorbeeld van de tekst die je schrijft hoe die er op de website zal uitzien. **Hiervoor moet de Taalknop uit staan**!
-* [Scrolknop](/badge_2026/assets/uploads/docs_scroll.png) De scrolknop, als deze aan staat scrolt het voorbeeldvenster mee met wat je typt.
+* ![Taalknop](/badge_2026/assets/uploads/docs_lang.png) **Taalknop:** toont of verbergt het taalveld aan de rechterkant.
+* ![Voorbeeldknop](/badge_2026/assets/uploads/docs_preview.png) **Voorbeeldknop:** toont of verbergt een voorbeeld van hoe de tekst er op de website zal uitzien. **Hiervoor moet de Taalknop uitgeschakeld zijn!**
+* ![Scrolknop](/badge_2026/assets/uploads/docs_scroll.png) **Scrolknop:** wanneer deze ingeschakeld is, scrolt het voorbeeldvenster mee terwijl je typt.
 
 Je kan nu de gegevens invullen die je wilt. Je moet niet alles van de eerste keer juist doen en tussendoor opslaan en later verder werken.
 

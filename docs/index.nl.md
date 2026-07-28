@@ -91,7 +91,7 @@ Zoek je informatie over een van deze borden? Kies hieronder het juiste bord.
   <span class="board-card__content">
     <span class="board-card__title">SAO Mirror</span>
     <span class="board-card__description">
-      Shitty Add-On met spiegeleffect
+      Laat Shitty Addon naar de andere kant wijzen
     </span>
   </span>
 </a>
@@ -189,3 +189,5 @@ flashen. Je kunt ook
 
 - [Hardware](https://github.com/Fri3dCamp/badge_2026_hw)
 - [Standaardbesturingssysteem](https://github.com/Fri3dCamp/badge_firmware_MicroPythonOS)
+- [MicroPythonOS documentation](https://docs.micropythonos.com/)
+- [Fri3d IDE](https://fri3dcamp.github.io/Fri3d-IDE/)

@@ -35,10 +35,9 @@ The content of the **Title** field is automatically added to the table of conten
 
 On the right-hand side of this screen, there are several buttons for adjusting the view.
 
-* <img src="/badge_2026/assets/uploads/docs_lang.png" alt="Language button" width="32"> **Language button:** shows or hides the language field on the right.
-* <img src="/badge_2026/assets/uploads/docs_preview.png" alt="Preview button" width="32"> **Preview button:** shows or hides a preview of how the text will appear on the website. **The Language button must be turned off for this to work!**
-* <img src="/badge_2026/assets/uploads/docs_scroll.png" alt="Scroll button" width="32"> **Scroll button:** when enabled, the preview window scrolls along as you type.
-
+<img src="/badge_2026/assets/uploads/docs_lang.png" alt="Language button" width="32"> **Language button:** shows or hides the language field on the right.
+<img src="/badge_2026/assets/uploads/docs_preview.png" alt="Preview button" width="32"> **Preview button:** shows or hides a preview of how the text will appear on the website. **The Language button must be turned off for this to work!**
+<img src="/badge_2026/assets/uploads/docs_scroll.png" alt="Scroll button" width="32"> **Scroll button:** when enabled, the preview window scrolls along as you type.
 
 You can now enter the information you want. You do not need to get everything right the first time. You can save your work in between and continue later.
 

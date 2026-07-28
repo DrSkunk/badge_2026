@@ -58,3 +58,7 @@ plugins:
         - locale: nl
           default: true
           name: Nederlands
+
+extra_css:
+  - assets/stylesheets/home-cards.css
+  

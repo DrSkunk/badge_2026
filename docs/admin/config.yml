@@ -17,6 +17,11 @@ i18n:
 media_folder: docs/assets/uploads
 public_folder: /badge_2026/assets/uploads
 
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
   - name: docs
     label: Documentation

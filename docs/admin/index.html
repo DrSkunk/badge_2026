@@ -11,6 +11,30 @@
         window.location.replace("https://fri3d2026.netlify.app/badge_2026/admin/");
       }
     </script>
+    <script>
+      const DocsPreview = createClass({
+        render() {
+          return h(
+            "main",
+            { className: "md-main" },
+            h(
+              "div",
+              { className: "md-content" },
+              h(
+                "article",
+                { className: "md-content__inner md-typeset" },
+                this.props.widgetFor("body")
+              )
+            )
+          );
+        },
+      });
+
+      CMS.registerPreviewTemplate("docs", DocsPreview);
+      CMS.registerPreviewStyle(
+        "/badge_2026/assets/stylesheets/cms-preview.css"
+      );
+    </script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
@@ -25,6 +49,6 @@
         });
       }
     </script>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.15.1/dist/decap-cms.js"></script>
   </body>
 </html>

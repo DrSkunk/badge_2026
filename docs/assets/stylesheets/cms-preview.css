@@ -1,0 +1,383 @@
+/*
+ * Decap CMS preview styling for Material for MkDocs content.
+ *
+ * Expected preview wrapper:
+ *
+ * <article class="md-content__inner md-typeset">
+ *   ...
+ * </article>
+ */
+
+:root {
+  color-scheme: light;
+
+  --preview-background: #ffffff;
+  --preview-text: #2e303e;
+  --preview-muted: #5f6368;
+  --preview-border: #e0e0e0;
+  --preview-code-background: #f5f5f5;
+  --preview-link: #4051b5;
+  --preview-admonition: #448aff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--preview-background);
+  font-size: 16px;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 2rem;
+  background: var(--preview-background);
+  color: var(--preview-text);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.md-main,
+.md-content {
+  width: 100%;
+}
+
+.md-content__inner,
+.md-typeset {
+  width: 100%;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.md-typeset {
+  font-size: 1rem;
+}
+
+/* Headings */
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  color: var(--preview-text);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.md-typeset h2 {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--preview-border);
+  font-size: 1.55rem;
+}
+
+.md-typeset h3 {
+  font-size: 1.3rem;
+}
+
+.md-typeset h4 {
+  font-size: 1.1rem;
+}
+
+.md-typeset h5,
+.md-typeset h6 {
+  font-size: 1rem;
+}
+
+/* Paragraphs and lists */
+
+.md-typeset p {
+  margin: 0.8em 0;
+}
+
+.md-typeset ul,
+.md-typeset ol {
+  margin: 0.8em 0;
+  padding-left: 1.7rem;
+}
+
+.md-typeset li {
+  margin: 0.25em 0;
+}
+
+.md-typeset li > ul,
+.md-typeset li > ol {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+/* Links */
+
+.md-typeset a {
+  color: var(--preview-link);
+  text-decoration: none;
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Images and figures */
+
+.md-typeset img,
+.md-typeset svg,
+.md-typeset video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.md-typeset img {
+  margin: 1rem auto;
+  border-radius: 0.2rem;
+}
+
+.md-typeset figure {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.md-typeset figcaption {
+  margin-top: 0.5rem;
+  color: var(--preview-muted);
+  font-size: 0.875rem;
+}
+
+/* Inline code */
+
+.md-typeset code,
+.md-typeset kbd,
+.md-typeset samp {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    monospace;
+}
+
+.md-typeset :not(pre) > code {
+  padding: 0.12rem 0.32rem;
+  border-radius: 0.2rem;
+  background: var(--preview-code-background);
+  font-size: 0.88em;
+}
+
+/* Code blocks */
+
+.md-typeset pre {
+  max-width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--preview-border);
+  border-radius: 0.3rem;
+  background: var(--preview-code-background);
+  overflow: auto;
+  line-height: 1.5;
+}
+
+.md-typeset pre code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 0.875rem;
+}
+
+/* Blockquotes */
+
+.md-typeset blockquote {
+  margin: 1rem 0;
+  padding: 0.2rem 1rem;
+  border-left: 0.25rem solid var(--preview-border);
+  color: var(--preview-muted);
+}
+
+.md-typeset blockquote > :first-child {
+  margin-top: 0;
+}
+
+.md-typeset blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rule */
+
+.md-typeset hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--preview-border);
+}
+
+/* Tables */
+
+.md-typeset table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+.md-typeset th,
+.md-typeset td {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--preview-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.md-typeset th {
+  background: var(--preview-code-background);
+  font-weight: 600;
+}
+
+/* Definition lists */
+
+.md-typeset dt {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.md-typeset dd {
+  margin-left: 1.5rem;
+}
+
+/* Keyboard keys */
+
+.md-typeset kbd {
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  border: 1px solid #c8c8c8;
+  border-bottom-width: 2px;
+  border-radius: 0.2rem;
+  background: #fafafa;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+/* MkDocs Material admonitions */
+
+.md-typeset .admonition,
+.md-typeset details {
+  margin: 1.25rem 0;
+  padding: 0 0.8rem 0.8rem;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--preview-admonition) 35%,
+    var(--preview-border)
+  );
+  border-left: 0.25rem solid var(--preview-admonition);
+  border-radius: 0.25rem;
+  background: color-mix(
+    in srgb,
+    var(--preview-admonition) 5%,
+    var(--preview-background)
+  );
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  margin: 0 -0.8rem 0.8rem;
+  padding: 0.6rem 0.8rem;
+  background: color-mix(
+    in srgb,
+    var(--preview-admonition) 12%,
+    var(--preview-background)
+  );
+  font-weight: 600;
+}
+
+.md-typeset details > summary {
+  cursor: pointer;
+}
+
+/* Task lists */
+
+.md-typeset .task-list-item {
+  list-style: none;
+}
+
+.md-typeset .task-list-item input[type="checkbox"] {
+  margin-right: 0.45rem;
+}
+
+/* Footnotes */
+
+.md-typeset .footnote {
+  color: var(--preview-muted);
+  font-size: 0.9rem;
+}
+
+/* Prevent very long strings from breaking the preview layout */
+
+.md-typeset pre,
+.md-typeset code,
+.md-typeset a {
+  overflow-wrap: anywhere;
+}
+
+/* Small screens */
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .md-typeset h1 {
+    font-size: 1.7rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.35rem;
+  }
+
+  .md-typeset table {
+    font-size: 0.82rem;
+  }
+}
+
+/* Optional dark-mode support */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --preview-background: #1e2129;
+    --preview-text: #e6e6e6;
+    --preview-muted: #b8bcc6;
+    --preview-border: #444854;
+    --preview-code-background: #292d37;
+    --preview-link: #9fa8ff;
+  }
+
+  .md-typeset kbd {
+    border-color: #5a5f6d;
+    background: #292d37;
+  }
+}

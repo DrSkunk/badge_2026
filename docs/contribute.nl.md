@@ -1,14 +1,19 @@
 ---
-title: "Bijdragen"
+title: Bijdragen aan documentatie
 ---
-
 # Help je mee aan deze documentatie?
 
-Wat fijn dat je wil meehelpen — dankjewel! Elke bijdrage, groot of klein, maakt deze documentatie beter voor iedereen. En het goede nieuws: je hebt er geen technische kennis voor nodig. Alles kan gewoon vanuit je browser.
+Wat fijn dat je wil meehelpen, dankjewel! Elke bijdrage, groot of klein, maakt deze documentatie beter voor iedereen. Er is geen technische kennis of speciale software nodig om mee te helpen.
 
-## Zo log je in
+## Inloggen op het documentatie portaal
 
-1. Ga naar [https://fri3dcamp.github.io/badge_2026/admin](https://fri3dcamp.github.io/badge_2026/admin). Je wordt automatisch doorgestuurd naar [https://fri3d2026.netlify.app/badge_2026/admin/](https://fri3d2026.netlify.app/badge_2026/admin/) — daar staat de editor.
+Ga naar <https://fri3d2026.netlify.app/badge_2026/admin/> daar staat de editor.
+
+![Loginpagina](/badge_2026/assets/uploads/docs_splash.png "Loginpagina")
+
+
+
+1.
 2. Meld je aan met een account naar keuze (zoals Google of GitHub), of gewoon met je e-mailadres en een wachtwoord.
 3. Koos je voor e-mail en wachtwoord? Dan krijg je eerst een mailtje om je e-mailadres te bevestigen. Even op de link klikken en klaar!
 4. Daarna kan je inloggen en meteen aan de slag.
@@ -17,9 +22,9 @@ Wat fijn dat je wil meehelpen — dankjewel! Elke bijdrage, groot of klein, maak
 
 Eens je ingelogd bent, kan je:
 
-- Een nieuwe pagina schrijven
-- Bestaande pagina's verbeteren of aanvullen, in het Nederlands én het Engels
-- Foto's en afbeeldingen toevoegen
+* Een nieuwe pagina schrijven
+* Bestaande pagina's verbeteren of aanvullen, in het Nederlands én het Engels
+* Foto's en afbeeldingen toevoegen
 
 **Je hoeft niet bang te zijn om iets kapot te maken**, je wijzigingen komen niet meteen online en worden nagekeken. We bijten niet (hard)!
 

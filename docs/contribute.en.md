@@ -1,5 +1,5 @@
 ---
-title: "Contribute"
+title: Contribute to documentation
 ---
 
 # Want to help with this documentation?

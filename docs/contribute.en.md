@@ -1,36 +1,62 @@
 ---
 title: Contribute to documentation
 ---
+# Would you like to help with this documentation?
 
-# Want to help with this documentation?
+Thank you so much for wanting to help! Every contribution, large or small, makes this documentation better for everyone. No technical knowledge or special software is required to contribute.
 
-Thank you so much for wanting to help out, you're awesome! Every contribution, big or small, makes this documentation better for everyone. And here's the good news: you don't need any technical knowledge. Everything happens right in your browser.
+## Logging in to the documentation portal
 
-## How to log in
+Go to <https://fri3d2026.netlify.app/badge_2026/admin/>. This is where you will find the editor.
 
-1. Go to [https://fri3dcamp.github.io/badge_2026/admin](https://fri3dcamp.github.io/badge_2026/admin). You'll automatically be taken to [https://fri3d2026.netlify.app/badge_2026/admin/](https://fri3d2026.netlify.app/badge_2026/admin/) — that's where the editor lives.
-2. Sign in with an account of your choosing (like Google or GitHub), or simply with your email address and a password.
-3. Signed up with email and password? You'll first get an email to confirm your address. Just click the link and you're all set!
-4. After that, you can log in and get started right away.
+![Login page](/badge_2026/assets/uploads/docs_splash.png)
 
-## Getting started
+Click **Login with Netlify Identity**
 
-Once you're logged in, you can:
+![Identity Providers](/badge_2026/assets/uploads/docs_login.png)
 
-- Write a new page
-- Improve or expand existing pages, in both Dutch and English
-- Add photos and images
+Sign in with an account of your choice, such as Google or GitHub, or simply use your email address and a password. If you choose to use an email address, you will first receive an email to activate your account.
 
-**Don't worry about breaking anything**, your changes don't go live right away and will be reviewed. We don't bite (hard)!
+Once you are logged in, you will see an overview of all current pages.
+
+![Page overview](/badge_2026/assets/uploads/docs_overview.png)
+
+You can now choose either to add a new page or to edit an existing page.
+
+## Adding a new page
+
+On the overview page, click the black **+Page** button. This opens a new screen with a blank page.
+
+![](/badge_2026/assets/uploads/docs_newpage.png)
+
+By default, you will see a split view. The text in **Dutch** is shown on the left, and the text in **English** on the right. We prefer to have the text available in both languages.
+
+The content of the **Title** field is automatically added to the table of contents on the left-hand side of the documentation website.
+
+On the right-hand side of this screen, there are several buttons for adjusting the view.
+
+* [Language button](/badge_2026/assets/uploads/docs_lang.png) The language button shows or hides the language field on the right.
+* [Preview button](/badge_2026/assets/uploads/docs_preview.png) The preview button shows or hides a preview of how the text you are writing will appear on the website. **The Language button must be turned off for this to work**!
+* [Scroll button](/badge_2026/assets/uploads/docs_scroll.png) When enabled, the scroll button makes the preview window scroll along with what you are typing.
+
+You can now enter the information you want. You do not need to get everything right the first time. You can save your work in between and continue later.
+
+When you are finished, or want to continue later, click **Save** at the top.
+
+**You do not need to worry about breaking anything.** Your changes will not go online immediately and will be reviewed before they are published on the documentation website.
+
+## Editing a page
+
+On the overview page, click the page you want to edit. You will then see the same screen as when creating a new page.
+
+Make the changes you want in Dutch and English, then click **Save**.
 
 ## What happens to your changes?
 
-When you save your work, it's automatically submitted as a proposal to the Fri3d Camp documentation team. Someone from the team reviews your contribution and approves it. After that, it appears on the site. This keeps everything tidy, and you don't have to worry about a thing.
+When you are finished, it is best to send a message in the [Badge 2026 channel on Discord](https://discord.com/channels/929462354415087736/1437876462874267740) or speak to a Fri3d Camp staff member. They can then review your edits and publish them on the website.
 
-Curious what such a proposal looks like behind the scenes? [Here's an example](https://github.com/Fri3dCamp/badge_2026/pull/7).
+## Are you more technically inclined?
 
-## More of a techie after all?
+That works too! You can always contribute directly through [GitHub](https://github.com/Fri3dCamp/badge_2026): fork the repository, edit the Markdown files in the `docs/` folder, and open a Pull Request. The [README](https://github.com/Fri3dCamp/badge_2026/blob/main/README.md) contains all the information you need.
 
-That works too! You can always contribute directly via [GitHub](https://github.com/Fri3dCamp/badge_2026): fork the repository, edit the Markdown files in the `docs/` folder, and open a Pull Request. In the [README](https://github.com/Fri3dCamp/badge_2026/blob/main/README.md) you'll find all the info you need.
-
-Thanks again for helping out! 💚
+Thank you again for helping! 💚

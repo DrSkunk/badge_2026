@@ -51,6 +51,8 @@ In de overzichtspagina klik je op de pagina die je wilt wijzigen. Je krijgt dan 
 
 Wijzig wat je wilt in het Nederlands en het Engels. Druk daarna op **Save**.
 
+**Opgelet, als je afbeeldingen toevoegt of wijzigt worden ze op dit moment niet getoond in de preview. Dit is een probleem dat onze provider moet oplossen.**
+
 ## Wat gebeurt er met je wijzigingen?
 
 Wanneer je klaar bent stuur je best een berichtje op het [Badge 2026 kanaal op Discord](https://discord.com/channels/929462354415087736/1437876462874267740) of spreek je een Fri3d Camp medewerker aan. Zij kunnen dan je bewerkingen nakijken en publiceren op de website.

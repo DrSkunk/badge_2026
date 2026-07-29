@@ -60,7 +60,7 @@ Do the same for the 6 potentiometers, 3 on each side. Click them into the design
 
 Place the long pins on the side with all the components. You can use another female connector (or even the badge) to keep the 2 loose pin strips neatly aligned while soldering.
 
-![pins soldered](/badge_2026/assets/uploads/placeholder.svg)
+![pins soldered](/badge_2026/assets/uploads/DJ-lange-pinnen.jpg)
 
 #### Mount the silicone keys
 

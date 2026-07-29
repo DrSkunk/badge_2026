@@ -59,8 +59,6 @@ Doe hetzelfde voor de 6 potentiometers, 3 aan elke kant. Klik ze in de voorziene
 Plaats de lange pinnen aan de zijde met alle componenten. Je kan een andere vrouwelijke connector (of zelfs de badge) gebruiken om de 2 losse pinnen stroken netjes op een rijtje te houden tijdens het solderen.
 ![pinnen gesoldeerd](/badge_2026/assets/uploads/DJ-lange-pinnen.jpg)
 
-![pinnen gesoldeerd](/badge_2026/assets/uploads/placeholder.svg)
-
 #### Monteer de siliconen toetsen
 
 Leg de siliconen toetsen op de printplaat en schuif daarover het houten afdekplaatje.

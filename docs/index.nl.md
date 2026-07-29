@@ -1,3 +1,6 @@
+---
+title: Startpagina
+---
 # Startpagina
 
 Zoek je informatie over een van deze borden? Kies hieronder het juiste bord.

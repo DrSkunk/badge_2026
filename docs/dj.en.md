@@ -42,9 +42,13 @@ The package you received contains everything you need to build the DJ add-on
 
 #### Mount the faders
 
-There are 3 faders to solder: 1 on the left, 1 on the right and 1 at the bottom. Place them in the designated holes and solder them in place on the back of the PCB.
+There are 3 faders to solder: 1 on the left, 1 on the right and 1 at the bottom.
+Bend the 2 middle legs of the fader flat, there is some room between the fader and the pcb, almost flush is good enough.
+Place them in the designated holes and solder them in place on the back of the PCB.
 
-![faders soldered](/badge_2026/assets/uploads/placeholder.svg)
+![fader](/badge_2026/assets/uploads/DJ-Slider.jpeg)
+![fader legs bent](docs/assets/uploads/DJ-Slider-Clipped.jpeg)
+![faders soldered](/badge_2026/assets/uploads/DJ-Slider-Soldered.jpg)
 
 #### Mount the potentiometers
 

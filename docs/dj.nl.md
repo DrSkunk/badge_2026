@@ -45,7 +45,7 @@ Er zijn 3 faders om te solderen: 1 links, 1 rechts en 1 onderaan.
 Plooi de middelste 2 pinnetjes van de faders vlak, er is wat plaats tussen de fader en de pcb, ongeveer vlak is goed.
 Zet ze in de voorziene gaten en soldeer ze vast langs de achterkant van de PCB.
 ![fader](/badge_2026/assets/uploads/DJ-Slider.jpeg)
-![fader pootjes geplooid](badge_2026/assets/uploads/DJ-Slider-Clipped.jpeg)
+![fader pootjes geplooid](/badge_2026/assets/uploads/DJ-Slider-Clipped.jpeg)
 ![faders gesoldeerd](/badge_2026/assets/uploads/DJ-Slider-Soldered.jpg)
 
 #### Monteer de potentiometers

@@ -47,7 +47,7 @@ Bend the 2 middle legs of the fader flat, there is some room between the fader a
 Place them in the designated holes and solder them in place on the back of the PCB.
 
 ![fader](/badge_2026/assets/uploads/DJ-Slider.jpeg)
-![fader legs bent](badge_2026/assets/uploads/DJ-Slider-Clipped.jpeg)
+![fader legs bent](/badge_2026/assets/uploads/DJ-Slider-Clipped.jpeg)
 ![faders soldered](/badge_2026/assets/uploads/DJ-Slider-Soldered.jpg)
 
 #### Mount the potentiometers

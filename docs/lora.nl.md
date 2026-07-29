@@ -41,3 +41,5 @@ Deze kit bevat een SMD SMA connector en een 5dBi Gain 868MHz antenne.
 
 Bij het monteren van deze connector is, net zoals bij het monteren van de antenna, een hulpmiddel zoals een pincet nodig. Deze SMA connectoren worden heel warm tijdens het solderen. Hier is ook geduld belangrijk om een goede soldeer verbinding te bekomen. Het metaal dat je wil solderen op de PCB (in dit geval de SMA connector) moet warm genoeg zijn opdat het soldeersel zich er goed aan hecht.
 
+![SMA Connector soldered front](/badge_2026/assets/uploads/lora-lora-7.jpg)
+![SMA Connector soldered back](/badge_2026/assets/uploads/lora-lora-8.jpg)

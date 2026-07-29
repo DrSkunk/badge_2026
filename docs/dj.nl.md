@@ -66,8 +66,8 @@ Zorg dat de schroefgaten in elke hoek van de siliconen laag, de PCB en het plaat
 Monteer daarna de 4 schroeven in de gaten langs de onderzijde (de kant van de PCB), Plaats de moer aan de bovenzijde (de kant van de houten plaat).
 
 ![cover](/badge_2026/assets/uploads/DJ-Cover.jpeg)
-![cover mounted 1](docs/assets/uploads/DJ-Cover-Mounted1.jpg)
-![cover mounted 2](docs/assets/uploads/DJ-Cover-Mounted2.jpg)
+![cover mounted 1](/badge_2026/assets/uploads/DJ-Cover-Mounted1.jpg)
+![cover mounted 2](/badge_2026/assets/uploads/DJ-Cover-Mounted2.jpg)
 
 #### Verbind 2 harde schijven of rotary encoders
 

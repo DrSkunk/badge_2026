@@ -54,7 +54,7 @@ Place them in the designated holes and solder them in place on the back of the P
 
 Do the same for the 6 potentiometers, 3 on each side. Click them into the designated holes and solder all contact points on the back of the PCB.
 
-![potentiometers soldered](/badge_2026/assets/uploads/placeholder.svg)
+![potentiometers soldered](/badge_2026/assets/uploads/DJ-soldered.jpeg)
 
 #### Solder the long pins
 

@@ -52,7 +52,7 @@ Zet ze in de voorziene gaten en soldeer ze vast langs de achterkant van de PCB.
 
 Doe hetzelfde voor de 6 potentiometers, 3 aan elke kant. Klik ze in de voorziene gaten en soldeer alle contactpunten aan de achterzijde van de PCB.
 
-![potentiometers gesoldeerd](/badge_2026/assets/uploads/placeholder.svg)
+![potentiometers gesoldeerd](/badge_2026/assets/uploads/DJ-soldered.jpeg)
 
 #### Soldeer de lange pinnen
 

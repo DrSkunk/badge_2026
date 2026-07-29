@@ -45,7 +45,7 @@ Er zijn 3 faders om te solderen: 1 links, 1 rechts en 1 onderaan.
 Plooi de middelste 2 pinnetjes van de faders vlak, er is wat plaats tussen de fader en de pcb, ongeveer vlak is goed.
 Zet ze in de voorziene gaten en soldeer ze vast langs de achterkant van de PCB.
 ![fader](/badge_2026/assets/uploads/DJ-Slider.jpeg)
-![fader pootjes geplooid](docs/assets/uploads/DJ-Slider-Clipped.jpeg)
+![fader pootjes geplooid](badge_2026/assets/uploads/DJ-Slider-Clipped.jpeg)
 ![faders gesoldeerd](/badge_2026/assets/uploads/DJ-Slider-Soldered.jpg)
 
 #### Monteer de potentiometers
@@ -62,7 +62,13 @@ Plaats de lange pinnen aan de zijde met alle componenten. Je kan een andere vrou
 
 #### Monteer de siliconen toetsen
 
-Leg de siliconen toetsen op de printplaat en schuif daarover het houten afdekplaatje. Zorg dat de schroefgaten in elke hoek van de siliconen laag, de PCB en het plaatje mooi uitgelijnd zijn. Monteer daarna de 4 schroeven in de gaten langs de onderzijde (de kant van de PCB), Plaats de moer aan de bovenzijde (de kant van de houten plaat).
+Leg de siliconen toetsen op de printplaat en schuif daarover het houten afdekplaatje.
+Zorg dat de schroefgaten in elke hoek van de siliconen laag, de PCB en het plaatje mooi uitgelijnd zijn.
+Monteer daarna de 4 schroeven in de gaten langs de onderzijde (de kant van de PCB), Plaats de moer aan de bovenzijde (de kant van de houten plaat).
+
+![cover](docs/assets/uploads/DJ-Cover.jpeg)
+![](docs/assets/uploads/DJ-Cover-Mounted1.jpeg)
+![](docs/assets/uploads/DJ-Cover-Mounted2.jpeg)
 
 ![Toesten geplaatst](/badge_2026/assets/uploads/placeholder.svg)
 

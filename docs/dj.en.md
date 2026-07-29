@@ -37,7 +37,8 @@ The package you received contains everything you need to build the DJ add-on
 - a cover plate for the buttons
 - 1 x 2x6 pin header with extra long pins
 
-![Contents of the package](/badge_2026/assets/uploads/placeholder.svg)
+![The package](/badge_2026/assets/uploads/DJ-Kit.jpeg)
+![Contents of the package](/badge_2026/assets/uploads/DJ-inhoud_van_het_pakje.jpg)
 
 #### Mount the faders
 

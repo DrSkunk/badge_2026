@@ -36,7 +36,8 @@ Het pakje dat je ontvangen hebt bevat alles wat je nodig hebt om de DJ add-on te
 * een plaatje voor de knoppen
 * 1 x 2x6 pinheader met extra lange pinnen
 
-![Inhoud van het pakje](/badge_2026/assets/uploads/placeholder.svg)
+![Het pakje](/badge_2026/assets/uploads/DJ-Kit.jpeg)
+![Inhoud van het pakje](/badge_2026/assets/uploads/DJ-inhoud_van_het_pakje.jpg)
 
 #### Monteer de faders
 

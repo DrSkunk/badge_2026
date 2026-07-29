@@ -67,13 +67,9 @@ Leg de siliconen toetsen op de printplaat en schuif daarover het houten afdekpla
 Zorg dat de schroefgaten in elke hoek van de siliconen laag, de PCB en het plaatje mooi uitgelijnd zijn.
 Monteer daarna de 4 schroeven in de gaten langs de onderzijde (de kant van de PCB), Plaats de moer aan de bovenzijde (de kant van de houten plaat).
 
-![cover](docs/assets/uploads/DJ-Cover.jpeg)
-![](docs/assets/uploads/DJ-Cover-Mounted1.jpeg)
-![](docs/assets/uploads/DJ-Cover-Mounted2.jpeg)
-
-![Toesten geplaatst](/badge_2026/assets/uploads/placeholder.svg)
-
-![Afdekplaatje geplaatst](/badge_2026/assets/uploads/placeholder.svg)
+![cover](/badge_2026/assets/uploads/DJ-Cover.jpeg)
+![cover mounted 1](docs/assets/uploads/DJ-Cover-Mounted1.jpg)
+![cover mounted 2](docs/assets/uploads/DJ-Cover-Mounted2.jpg)
 
 #### Verbind 2 harde schijven of rotary encoders
 

@@ -66,8 +66,9 @@ Place the long pins on the side with all the components. You can use another fem
 
 Place the silicone keys on the PCB and slide the wooden cover plate over them. Make sure the screw holes in each corner of the silicone layer, the PCB and the plate are nicely aligned. Then mount the 4 screws in the holes from the bottom side (the PCB side), and place the nut on the top side (the side of the wooden plate).
 
-![Keys placed](/badge_2026/assets/uploads/placeholder.svg)
-![Cover plate placed](/badge_2026/assets/uploads/placeholder.svg)
+![cover](/badge_2026/assets/uploads/DJ-Cover.jpeg)
+![cover mounted 1](docs/assets/uploads/DJ-Cover-Mounted1.jpg)
+![cover mounted 2](docs/assets/uploads/DJ-Cover-Mounted2.jpg)
 
 #### Connect 2 hard disk drives or rotary encoders
 

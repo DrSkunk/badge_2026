@@ -79,7 +79,7 @@ Je kan ook klassieke rotary encoders aansluiten op de DJ add-on. Deze zullen waa
 
 In de App Store van [MicropythonOS](https://micropythonos.com) kan je een eenvoudige DJ Add-on app vinden die je kan gebruiken om te testen of je DJ Add-on helemaal goed werkt.
 
-Je kan je DJ Add-on ook meteen uittesten in je browser met de [Fri3d Scratcher](https://fri3dcamp.github.io/fri3d-scratcher/): sluit de DJ Add-on via USB aan op je computer, open de website en klik op "Connect controller". Daarna kan je tracks laden en mixen met de potmeters, faders en knoppen van je DJ Add-on.
+Je kan je DJ Add-on ook meteen uittesten in je browser met de [Fri3d Scratcher](https://fri3dcamp.github.io/fri3d-scratcher/): sluit de DJ Add-on via USB aan op je computer, open de website en klik op "Connect controller". Daarna kan je tracks laden en mixen met de potmeters, faders en knoppen van je DJ Add-on. In de eerste versie van de firmware is een foutje geslopen waardoor de draaiknoppen en sliders niet lijken te werken. Geen paniek! Je kan de firmware eenvoudig updaten via [de fri3d web flasher](https://fri3dcamp.github.io/fri3d-web-flasher/)
 
 [![Fri3d Scratcher](/badge_2026/assets/uploads/dj-fri3d-scratcher.png)](https://fri3dcamp.github.io/fri3d-scratcher/)
 
@@ -87,7 +87,7 @@ Je kan je DJ Add-on ook meteen uittesten in je browser met de [Fri3d Scratcher](
 
 De DJ add-on doet zich voor als een [MIDI](https://midi.org/basic-of-usb) toestel. Je kan de DJ add-on via USB aansluiten op je computer, of via de expansion connector met je badge. De DJ Add-on kan zowel via UART als via I2C met de badge communiceren. De UART instellingen zijn 115200 8N1.
 
-Wil je meteen aan de slag als DJ? Sluit de DJ Add-on via USB aan op je computer en open de [Fri3d Scratcher](https://fri3dcamp.github.io/fri3d-scratcher/) webapplicatie in je browser. Deze werkt via Web MIDI en laat je 2 decks mixen met je DJ Add-on als controller.
+Wil je meteen aan de slag als DJ? Sluit de DJ Add-on via USB aan op je computer en open de [Fri3d Scratcher](https://fri3dcamp.github.io/fri3d-scratcher/) webapplicatie in je browser. Deze werkt via Web MIDI en laat je 2 decks mixen met je DJ Add-on als controller. Als je sliders of draaiknoppen niet lijken te werken, update dan even de firmware via [de fri3d web flasher](https://fri3dcamp.github.io/fri3d-web-flasher/)
 
 Via USB en UART wordt het MIDI protocol gebruikt. Volgende MIDI signalen worden verstuurd door de DJ add-on:
 

@@ -114,7 +114,7 @@ Zoek je informatie over een van deze borden? Kies hieronder het juiste bord.
   />
   <span class="board-card__content">
     <span class="board-card__title">Flamingo</span>
-    <span class="board-card__description">Badge van Fri3d Camp 2024</span>
+    <span class="board-card__description">Blaster van Fri3d Camp 2024</span>
   </span>
 </a>
 
@@ -163,7 +163,7 @@ Zoek je informatie over een van deze borden? Kies hieronder het juiste bord.
   />
   <span class="board-card__content">
     <span class="board-card__title">Blaster 2022</span>
-    <span class="board-card__description">Badge van Fri3d Camp 2022</span>
+    <span class="board-card__description">Blaster van Fri3d Camp 2022</span>
   </span>
 </a>
 

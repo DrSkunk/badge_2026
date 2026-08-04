@@ -58,7 +58,6 @@ Plaats de lange pinnen aan de zijde met alle componenten. Je kan een andere vrou
 Duw de 2mm lange plastieken pinnetjes in de roze cover zoals getoond op de foto's hieronder. Leg het siliconen toetsenbord er in en klik het geheel op de communicator printplaat.
 
 ![2mm pinngen geplaats, closeup](/badge_2026/assets/uploads/communicator-pink_spacer.jpg)
-![2mm pinngen geplaats](/badge_2026/assets/uploads/communicator-pink_spacer_overview.jpg)
 ![toetsenbord in afdekplaat](/badge_2026/assets/uploads/communicator-pink_keyboard.jpg)
 ![toetsenbord gemonteerd](/badge_2026/assets/uploads/communicator-pink_mounted.jpg)
 

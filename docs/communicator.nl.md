@@ -14,7 +14,7 @@ De communicator bestaat uit:
 
 - QWERTY toetsenbord met achtergrond verlichting ontworpen door [Solder Party](https://www.solder.party/)
 - op RISC-V gebaseerd microcontroller - [WCH CH32X035](https://www.wch-ic.com/products/CH32X035.html)
-- [TDK ICS43434](https://invensense.tdk.com/products/ics-43434/) microfoon
+- Knowles SPH0645LM4H-B microfoon
 - [Analog Devices MAX98357A](https://www.analog.com/en/products/max98357a.html) DAC met versterker
 - kleine luidspreker
 

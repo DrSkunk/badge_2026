@@ -17,7 +17,11 @@ De kit komt met de nodige connectoren. De optionele LEDs zitten niet bij in de k
 ### Assemblage instructies
 
 Plaats de connectoren op de printplaat zoals hier aangeven.
-⚠️ let op de orientatie van de connectoren!
+
+!!! warning "let op de orientatie van de connectoren"
+
+	De richting van de connectoren is kritisch, kijk aandachtig naar de foto's zodat je deze correct monteert op de PCB.
+
 
 ![plaatsing connectoren](/badge_2026/assets/uploads/mirror-placement.jpg)
 

@@ -35,7 +35,9 @@ Hier is het gebruik van een pincet zeer cruciaal daar de antenna behoorlijk warm
 
 Deze kit bevat een SMD SMA connector en een 5dBi Gain 868MHz antenne.
 
-⚠️⚠️⚠️ Gebruik deze module niet zonder antenne om beschadiging te voorkomen ⚠️⚠️⚠️
+!!! warning "Sluit altijd een antenne aan"
+
+	Om beschadiging te voorkomen aan de vermogenstrap van de RF module moet deze ten allen tijde getermineerd zijn. In de praktijk wil dit zeggen dat je altijd een antenne moet aansluiten wanneer je de LoRa module gaat gebruiken.
 
 ![SMA Connector](/badge_2026/assets/uploads/lora-lora-6.jpg)
 

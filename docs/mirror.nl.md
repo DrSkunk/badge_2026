@@ -11,6 +11,7 @@ Deze printplaat is ontworpen om sensoren die je op de [SaO connector](https://ha
 ### Overzicht
 
 ![Inhoud van het pakje](/badge_2026/assets/uploads/mirror-kit.jpg)
+
 De kit komt met de nodige connectoren. De optionele LEDs zitten niet bij in de kit. Als je deze wil solderen raden we aan om deze eerst te solderen voor je de overige componenten van de kit soldeert.
 
 ### Assemblage instructies

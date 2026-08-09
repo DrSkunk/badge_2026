@@ -63,3 +63,7 @@ plugins:
 extra_css:
   - assets/stylesheets/home-cards.css
   
+  - assets/stylesheets/fri3d-diagrams.css
+
+extra_javascript:
+  - assets/javascripts/fri3d-diagrams.js

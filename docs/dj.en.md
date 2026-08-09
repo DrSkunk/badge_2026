@@ -1,5 +1,8 @@
 ---
 title: DJ Add-on
+hide:
+  - toc
+
 ---
 
 # DJ Add-on
@@ -7,6 +10,15 @@ title: DJ Add-on
 To get your DJ Add-on working, you first need to assemble it before you can connect it to the badge.
 
 ## HARDWARE
+
+
+
+### Interactive hardware overview
+
+Hover over a component for a short explanation and to highlight its connections. Click a component to pin its details.
+
+<a href="/badge_2026/assets/uploads/dj-blockdiagram.png" target="_blank" rel="noopener">Open origineel PNG-diagram ↗</a>
+<div data-fri3d-diagram="dj" data-lang="en"></div>
 
 ### DJ add-on features
 
@@ -20,8 +32,6 @@ The DJ add-on consists of:
 - 2 connectors for hard disk drives (see below)
 
 You can find the design and source files in the [GitHub repository](https://github.com/Fri3dCamp/dj_2026)
-
-![blockdiagram](/badge_2026/assets/uploads/dj-blockdiagram.png)
 
 ### Step by step assembly guide
 

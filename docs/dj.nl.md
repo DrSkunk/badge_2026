@@ -1,11 +1,23 @@
 ---
 title: DJ Add-on
+hide:
+  - toc
+
 ---
 # DJ Add-on
 
 Om je DJ Add-on te doen werken, moet je deze nog assambleren alvorens je deze kan aansluiten op de badge.
 
 ## HARDWARE
+
+
+
+### Interactief hardwareoverzicht
+
+Beweeg over een component voor een korte uitleg en om de verbindingen te markeren. Klik op een component om de details vast te zetten.
+
+<a href="/badge_2026/assets/uploads/dj-blockdiagram.png" target="_blank" rel="noopener">Open origineel PNG-diagram ↗</a>
+<div data-fri3d-diagram="dj" data-lang="nl"></div>
 
 ### DJ add-on eigenschappen
 
@@ -19,8 +31,6 @@ De DJ addon bestaat uit:
 * 2 connectors voor harde schijven (zie verder)
 
 De ontwerp- en bronbestanden kan je terugvinden in de [GitHub repository](https://github.com/Fri3dCamp/dj_2026)
-
-![blockdiagram](/badge_2026/assets/uploads/dj-blockdiagram.png)
 
 ### Stap voor stap assemblage handleiding
 

@@ -1,0 +1,1891 @@
+{
+  "diagrams": [
+    {
+      "id": "badge",
+      "title": "Badge 2026",
+      "repo": "https://github.com/Fri3dCamp/badge_2026_hw/",
+      "intro": "Interactive version of the badge hardware block diagram.",
+      "bounds": {
+        "x": 175.0,
+        "y": 285.0,
+        "w": 980.0,
+        "h": 680.0
+      },
+      "nodes": [
+        {
+          "id": "jARbVu97DnctKdf9LegH-1",
+          "label": "ESP32-S3 based\nESP32-S3-WROOM-1\n8MB PSRAM\n16MB Flash",
+          "x": 570.0,
+          "y": 400.0,
+          "w": 160.0,
+          "h": 520.0,
+          "fill": "#d5e8d4",
+          "stroke": "#82b366",
+          "dashed": false,
+          "kind": "controller",
+          "description": "Main processor module of the badge. The ESP32-S3 runs the badge software and coordinates the display, storage, controls, audio, sensors and expansion interfaces. This variant includes 16 MB flash and 8 MB PSRAM.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The main application processor of the badge: an ESP32-S3-WROOM-1-N16R8 with 16 MB flash and 8 MB PSRAM. It runs the badge software, Wi-Fi and Bluetooth and talks directly to high-bandwidth peripherals such as the LCD, microSD and audio path. A separate CH32X035 board controller handles much of the lower-level I/O so the ESP32-S3 can focus on applications.",
+          "description_nl": "De hoofdprocessor van de badge: een ESP32-S3-WROOM-1-N16R8 met 16 MB flash en 8 MB PSRAM. Hij draait de badgesoftware, wifi en Bluetooth en stuurt snelle randapparatuur zoals het lcd-scherm, de microSD-kaart en het audiopad rechtstreeks aan. Een aparte CH32X035-boardcontroller neemt veel laag-niveau-I/O over, zodat de ESP32-S3 zich op applicaties kan richten.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-4",
+          "category_en": "Core & debug",
+          "category_nl": "Kern & debug"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-2",
+          "label": "USB C",
+          "x": 220.0,
+          "y": 420.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": false,
+          "kind": "connector",
+          "description": "USB-C connection for power and USB communication with the board.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The badge’s USB-C port has two jobs: it powers the board/charges the battery and provides native USB communication. Because the ESP32-S3 has USB built in, the badge does not need a separate USB-to-serial bridge; the USB connection is also available to the CH32X035 board controller.",
+          "description_nl": "De USB-C-poort van de badge heeft twee functies: de badge voeden/de batterij laden en native USB-communicatie voorzien. Omdat de ESP32-S3 zelf USB ondersteunt, is geen aparte USB-naar-serieelbrug nodig; de USB-verbinding is ook beschikbaar voor de CH32X035-boardcontroller.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-7",
+          "category_en": "Connectivity & expansion",
+          "category_nl": "Connectiviteit & uitbreiding"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-3",
+          "label": "5 x WS2812\nNeopixel",
+          "x": 870.0,
+          "y": 400.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "Five individually addressable WS2812 RGB LEDs for status, effects and applications.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Five addressable RGB LEDs form a small programmable light output on the badge. They share a serial LED data path, so software can control the colour and brightness of each LED independently without consuming one GPIO per colour channel.",
+          "description_nl": "Vijf adresseerbare RGB-leds vormen een programmeerbare lichtuitgang op de badge. Ze delen één seriële LED-datalijn, zodat software kleur en helderheid van elke led afzonderlijk kan regelen zonder voor elk kleurkanaal een aparte GPIO te gebruiken.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-11",
+          "category_en": "Lighting",
+          "category_nl": "Verlichting"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-6",
+          "label": "Reset Button",
+          "x": 220.0,
+          "y": 450.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "Hardware reset control for restarting the main processor.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Hardware reset for the badge. Use it when firmware is stuck or when you want to restart the ESP32-S3 without cycling the main power switch.",
+          "description_nl": "Hardware-reset voor de badge. Gebruik deze knop wanneer firmware vastloopt of wanneer je de ESP32-S3 opnieuw wilt starten zonder de hoofdvoeding uit en weer aan te zetten.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-14",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-7",
+          "label": "Start Button",
+          "x": 220.0,
+          "y": 480.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "Dedicated user input connected to the badge control circuitry.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "A dedicated input to the ESP32-S3, separate from the button group handled by the CH32X035. This makes it suitable for a processor-level start/boot interaction that remains directly visible to the main MCU.",
+          "description_nl": "Een aparte ingang rechtstreeks naar de ESP32-S3, los van de knoppengroep die door de CH32X035 wordt verwerkt. Daardoor is deze geschikt voor een start/boot-interactie die rechtstreeks door de hoofd-MCU kan worden gelezen.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-17",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-10",
+          "label": "Battery Charger",
+          "x": 400.0,
+          "y": 405.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "power",
+          "description": "Manages charging of the badge battery from the external power input.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The on-board TP4056 charging stage charges the protected 2000 mAh LiPo cell from USB-C. It sits between USB power and the battery, so plugging in USB can recharge the badge without removing the cell.",
+          "description_nl": "De ingebouwde TP4056-laadschakeling laadt de beveiligde LiPo-cel van 2000 mAh via USB-C. Ze zit tussen USB-voeding en batterij, zodat de badge kan worden opgeladen zonder de cel te verwijderen.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-20",
+          "category_en": "Power",
+          "category_nl": "Voeding"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-11",
+          "label": "3.3V Power rails\n2 x XC6210B33",
+          "x": 600.0,
+          "y": 330.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "power",
+          "description": "Two XC6210B33 regulators provide stable 3.3 V rails for the badge electronics and connected peripherals.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Two separate 3.3 V regulator rails are used instead of putting the whole badge on one supply. One rail can be switched to save energy; the hardware repository notes that this lets the Wi-Fi-related supply be disabled while the ESP32-S3 and board controller remain powered.",
+          "description_nl": "Twee afzonderlijke 3,3V-regelaars voeden de badge in plaats van alles op één voedingsrail te plaatsen. Eén rail kan worden uitgeschakeld om energie te besparen; volgens het hardwareontwerp kan zo de extra voeding worden uitgeschakeld terwijl de ESP32-S3 en boardcontroller actief blijven.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-21",
+          "category_en": "Power",
+          "category_nl": "Voeding"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-12",
+          "label": "Power Switch",
+          "x": 220.0,
+          "y": 390.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "Controls whether battery power is connected to the main badge power path.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Controls the badge’s main battery-powered supply path. Together with the split 3.3 V rails it allows the hardware to manage power consumption without changing the USB data connections.",
+          "description_nl": "Schakelt het hoofdvoedingspad vanaf de batterij. Samen met de opgesplitste 3,3V-rails maakt dit energiebeheer mogelijk zonder de USB-dataverbindingen te veranderen.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-23",
+          "category_en": "Power",
+          "category_nl": "Voeding"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-20",
+          "label": "Badge Link",
+          "x": 220.0,
+          "y": 780.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": false,
+          "kind": "connector",
+          "description": "Badge-to-badge or accessory connection path exposed by the hardware design.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Compatibility connection for Fri3d badge accessories, including the blaster ecosystem from earlier editions. It keeps useful accessory hardware from previous camps connectable to the 2026 badge.",
+          "description_nl": "Compatibiliteitsaansluiting voor Fri3d-badgeaccessoires, waaronder het blaster-ecosysteem van eerdere edities. Zo blijft nuttige hardware van vorige kampen bruikbaar met de badge van 2026.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-27",
+          "category_en": "Connectivity & expansion",
+          "category_nl": "Connectiviteit & uitbreiding"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-22",
+          "label": "SAO v1.69 Bis",
+          "x": 870.0,
+          "y": 460.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": true,
+          "kind": "connector",
+          "description": "Simple Add-On connector compatible with the SAO v1.69bis ecosystem.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "A standard Simple Add-On header for small badge accessories. It exposes the expected SAO power and signalling and is tied into the badge’s expansion/I²C ecosystem, making small community add-ons easy to attach.",
+          "description_nl": "Een standaard Simple Add-On-header voor kleine badgeaccessoires. Hij biedt de gebruikelijke SAO-voeding en signalen en sluit aan op het uitbreidings/I²C-ecosysteem van de badge, zodat community-add-ons eenvoudig kunnen worden aangesloten.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-31",
+          "category_en": "Connectivity & expansion",
+          "category_nl": "Connectiviteit & uitbreiding"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-23",
+          "label": "IR Receiver",
+          "x": 220.0,
+          "y": 840.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "Infrared receiver for detecting compatible remote-control or IR signals.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Infrared input connected to the main ESP32-S3. Firmware can decode IR pulse trains for remote-control style interaction, games or badge-to-device experiments without extra hardware.",
+          "description_nl": "Infraroodingang die rechtstreeks met de ESP32-S3 is verbonden. Firmware kan IR-pulsen decoderen voor afstandsbediening, spelletjes of experimenten met andere apparaten zonder extra hardware.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-34",
+          "category_en": "Sensors & measurement",
+          "category_nl": "Sensoren & metingen"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-24",
+          "label": "Buzzer",
+          "x": 220.0,
+          "y": 810.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "On-board buzzer for simple tones, alerts and audible feedback.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Simple on-board sounder for beeps, alerts and lightweight audio feedback. It is useful when a full headset/audio path would be unnecessary.",
+          "description_nl": "Eenvoudige ingebouwde zoemer voor piepjes, meldingen en lichte audiofeedback. Handig wanneer het volledige headset/audiopad niet nodig is.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-37",
+          "category_en": "Audio",
+          "category_nl": "Audio"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-25",
+          "label": "Accelerometer\nLSM6DSO",
+          "x": 870.0,
+          "y": 580.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "LSM6DSO inertial sensor used for motion and orientation input.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "LSM6DSO motion sensor used by the badge for acceleration and motion sensing. It shares the badge's I²C bus with other peripherals and is addressed at 0x6A.",
+          "description_nl": "LSM6DSO-bewegingssensor die de badge gebruikt voor acceleratie- en bewegingsdetectie. Hij deelt de I²C-bus van de badge met andere randapparaten en gebruikt adres 0x6A.",
+          "bus": "I2C",
+          "i2c_address": "0x6A",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-43",
+          "category_en": "Sensors & measurement",
+          "category_nl": "Sensoren & metingen"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-27",
+          "label": "Stemma QT connector",
+          "x": 870.0,
+          "y": 520.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": false,
+          "kind": "connector",
+          "description": "STEMMA QT / Qwiic-style connector for attaching compatible I²C sensors and peripherals without soldering.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "A solderless connector onto the badge’s I²C bus. It is intended for STEMMA QT/Qwiic-compatible sensors and modules, letting experiments share the same bus as on-board I²C devices.",
+          "description_nl": "Een soldeervrije aansluiting op de I²C-bus van de badge. Bedoeld voor STEMMA QT/Qwiic-compatibele sensoren en modules, zodat experimenten dezelfde bus kunnen delen als de ingebouwde I²C-apparaten.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-47",
+          "category_en": "Connectivity & expansion",
+          "category_nl": "Connectiviteit & uitbreiding"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-28",
+          "label": "ST7789v\n320x240 IPS LCD\n262k colors",
+          "x": 870.0,
+          "y": 700.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "320 × 240 IPS display driven by an ST7789V controller. It is the badge’s main visual interface.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The 2-inch 320×240 IPS LCD is the badge’s primary visual output. The ST7789V controller receives display data from the ESP32-S3, while the backlight and touch functions are represented separately because they have their own control paths.",
+          "description_nl": "Het 2-inch IPS-lcd van 320×240 pixels is de belangrijkste visuele uitvoer van de badge. De ST7789V-controller ontvangt beelddata van de ESP32-S3; achtergrondverlichting en touch staan apart omdat ze hun eigen besturingspaden hebben.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-50",
+          "category_en": "Display & touch",
+          "category_nl": "Display & touch"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-29",
+          "label": "Backlight",
+          "x": 870.0,
+          "y": 770.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "component",
+          "description": "Backlight circuit that illuminates the LCD and allows its brightness to be controlled independently of the display data.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The LCD backlight is controlled separately from the display controller. The CH32X035 can therefore manage screen illumination/brightness without having to send new pixel data to the ST7789V.",
+          "description_nl": "De achtergrondverlichting van het lcd-scherm wordt los van de displaycontroller aangestuurd. De CH32X035 kan zo de verlichting/helderheid regelen zonder nieuwe pixeldata naar de ST7789V te sturen.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-51",
+          "category_en": "Display & touch",
+          "category_nl": "Display & touch"
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-3",
+          "label": "Expansion Connector",
+          "x": 220.0,
+          "y": 870.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": false,
+          "kind": "connector",
+          "description": "Expansion interface that exposes power and signals for compatible add-on boards.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The badge’s general-purpose expansion interface. It exposes power and useful signals for larger add-ons such as the DJ and Communicator boards; those add-ons can use the badge as their host while keeping their own local controller and peripherals.",
+          "description_nl": "De algemene uitbreidingsconnector van de badge. Hij voert voeding en bruikbare signalen naar grotere add-ons zoals de DJ en Communicator; die kunnen de badge als host gebruiken en tegelijk hun eigen controller en randapparatuur hebben.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-52",
+          "category_en": "Connectivity & expansion",
+          "category_nl": "Connectiviteit & uitbreiding"
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-4",
+          "label": "Menu Button",
+          "x": 220.0,
+          "y": 530.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "Menu user button connected as a direct digital input for badge navigation and applications.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The Menu button is scanned by the CH32X035 board controller rather than consuming a dedicated ESP32-S3 input. The controller can collect the badge controls and forward their state to the main processor.",
+          "description_nl": "De Menu-knop wordt door de CH32X035-boardcontroller ingelezen in plaats van een aparte ESP32-S3-ingang te gebruiken. De controller verzamelt de bedieningselementen en kan hun toestand doorgeven aan de hoofdprocessor.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-53",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-5",
+          "label": "A Button",
+          "x": 220.0,
+          "y": 550.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "A user button connected as a direct digital input for badge navigation and applications.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The A button is scanned by the CH32X035 board controller rather than consuming a dedicated ESP32-S3 input. The controller can collect the badge controls and forward their state to the main processor.",
+          "description_nl": "De A-knop wordt door de CH32X035-boardcontroller ingelezen in plaats van een aparte ESP32-S3-ingang te gebruiken. De controller verzamelt de bedieningselementen en kan hun toestand doorgeven aan de hoofdprocessor.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-54",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-7",
+          "label": "B Button",
+          "x": 220.0,
+          "y": 570.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "B user button connected as a direct digital input for badge navigation and applications.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The B button is scanned by the CH32X035 board controller rather than consuming a dedicated ESP32-S3 input. The controller can collect the badge controls and forward their state to the main processor.",
+          "description_nl": "De B-knop wordt door de CH32X035-boardcontroller ingelezen in plaats van een aparte ESP32-S3-ingang te gebruiken. De controller verzamelt de bedieningselementen en kan hun toestand doorgeven aan de hoofdprocessor.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-55",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-8",
+          "label": "X Button",
+          "x": 220.0,
+          "y": 590.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "X user button connected as a direct digital input for badge navigation and applications.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The X button is scanned by the CH32X035 board controller rather than consuming a dedicated ESP32-S3 input. The controller can collect the badge controls and forward their state to the main processor.",
+          "description_nl": "De X-knop wordt door de CH32X035-boardcontroller ingelezen in plaats van een aparte ESP32-S3-ingang te gebruiken. De controller verzamelt de bedieningselementen en kan hun toestand doorgeven aan de hoofdprocessor.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-56",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-9",
+          "label": "Y Button",
+          "x": 220.0,
+          "y": 610.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "Y user button connected as a direct digital input for badge navigation and applications.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The Y button is scanned by the CH32X035 board controller rather than consuming a dedicated ESP32-S3 input. The controller can collect the badge controls and forward their state to the main processor.",
+          "description_nl": "De Y-knop wordt door de CH32X035-boardcontroller ingelezen in plaats van een aparte ESP32-S3-ingang te gebruiken. De controller verzamelt de bedieningselementen en kan hun toestand doorgeven aan de hoofdprocessor.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-57",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-25",
+          "label": "Joystick",
+          "x": 220.0,
+          "y": 630.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "input",
+          "description": "Directional joystick input for navigation and applications.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The directional joystick is handled by the CH32X035 together with the front-panel buttons. Centralising these controls on the board controller reduces ESP32-S3 pin usage and gives firmware one place to handle the human-interface inputs.",
+          "description_nl": "De richtingsjoystick wordt samen met de frontknoppen door de CH32X035 verwerkt. Door deze bedieningselementen op de boardcontroller te centraliseren zijn minder ESP32-S3-pinnen nodig en krijgt firmware één centrale plek voor gebruikersinvoer.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-58",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-29",
+          "label": "MicroSD Card",
+          "x": 870.0,
+          "y": 640.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": false,
+          "kind": "component",
+          "description": "Removable microSD storage for files, media and application data.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Removable storage attached to the main processor for applications, assets, logs and media. Keeping bulk data on microSD avoids consuming the ESP32-S3 module’s internal flash and makes files easy to exchange.",
+          "description_nl": "Verwijderbare opslag voor applicaties, assets, logs en media, aangesloten op de hoofdprocessor. Grote bestanden op microSD sparen de interne flash van de ESP32-S3 en zijn eenvoudig uit te wisselen.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-59",
+          "category_en": "Storage",
+          "category_nl": "Opslag"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-1",
+          "label": "WCH CH32X035",
+          "x": 370.0,
+          "y": 530.0,
+          "w": 90.0,
+          "h": 160.0,
+          "fill": "#ffe6cc",
+          "stroke": "#d79b00",
+          "dashed": false,
+          "kind": "controller",
+          "description": "Auxiliary CH32X035 microcontroller that handles local I/O and board-specific peripherals, reducing the amount of direct I/O required from the badge.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The badge’s board controller and I/O companion. It collects many physical controls and board-management signals, controls functions such as the LCD backlight, and provides extra I/O alongside the ESP32-S3. It also has its own USB connection in the block diagram, which is useful for board-level firmware and USB functions.",
+          "description_nl": "De boardcontroller en I/O-hulpchip van de badge. Hij verzamelt veel fysieke bedieningselementen en boardmanagementsignalen, stuurt onder meer de lcd-achtergrondverlichting aan en levert extra I/O naast de ESP32-S3. In het blokschema heeft hij ook een eigen USB-verbinding, nuttig voor boardfirmware en USB-functies.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-68",
+          "category_en": "Core & debug",
+          "category_nl": "Kern & debug"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-2",
+          "label": "I2S DAC\nCJC43334H",
+          "x": 870.0,
+          "y": 800.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "I²S audio DAC that converts digital audio from the processor into an analog output path.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The digital audio output stage. The ESP32-S3 sends audio as I²S; the DAC converts that digital stream to analog audio for the headset connector. Keeping conversion external avoids relying on a low-quality PWM-style audio output.",
+          "description_nl": "De digitale audio-uitgang. De ESP32-S3 stuurt audio via I²S; de DAC zet die digitale stroom om naar analoge audio voor de headsetconnector. Een externe omzetter vermijdt een eenvoudige PWM-achtige audio-uitgang.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-69",
+          "category_en": "Audio",
+          "category_nl": "Audio"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-4",
+          "label": "Headset TRRS Connector",
+          "x": 1010.0,
+          "y": 830.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": false,
+          "kind": "connector",
+          "description": "TRRS audio connector for a compatible headset, carrying the relevant audio input/output signals.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "The 3.5 mm TRRS jack combines the badge’s analog audio output and microphone input in one headset connector. Its output side is fed by the I²S DAC; the microphone side goes through the microphone amplifier before reaching the ESP32-S3.",
+          "description_nl": "De 3,5mm-TRRS-jack combineert analoge audio-uitgang en microfooningang in één headsetaansluiting. De uitgang komt van de I²S-DAC; het microfoonsignaal gaat eerst door de microfoonversterker en daarna naar de ESP32-S3.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-72",
+          "category_en": "Audio",
+          "category_nl": "Audio"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-5",
+          "label": "Microphone\nAmplifier",
+          "x": 870.0,
+          "y": 860.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "Analog microphone front end that amplifies the microphone signal before it reaches the rest of the audio circuitry.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Analog front end for the microphone contact in the TRRS headset jack. It boosts/conditions the small microphone signal before it is sampled by the ESP32-S3, forming the badge’s audio-input path.",
+          "description_nl": "Analoge voorversterker voor het microfooncontact van de TRRS-headsetjack. Hij versterkt/conditioneert het kleine microfoonsignaal voordat de ESP32-S3 het bemonstert en vormt zo het audio-ingangspad van de badge.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-73",
+          "category_en": "Audio",
+          "category_nl": "Audio"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-7",
+          "label": "Touch",
+          "x": 870.0,
+          "y": 750.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "Touch-sensing interface used for touch input on the badge.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Touch controller for the badge display. It communicates with the ESP32-S3 over the shared I²C bus and is addressed at 0x15.",
+          "description_nl": "Touchcontroller voor het display van de badge. Hij communiceert met de ESP32-S3 via de gedeelde I²C-bus en gebruikt adres 0x15.",
+          "bus": "I2C",
+          "i2c_address": "0x15",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-74",
+          "category_en": "Display & touch",
+          "category_nl": "Display & touch"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-8",
+          "label": "LoRa Module\nWio SX1262",
+          "x": 220.0,
+          "y": 720.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": true,
+          "kind": "component",
+          "description": "Optional Wio SX1262 LoRa radio module for long-range, low-data-rate wireless communication.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Optional Wio SX1262 radio for long-range, low-data-rate communication beyond the badge’s built-in Wi-Fi/Bluetooth. It is an optional population/expansion path, so projects that need LoRa can add it without making the radio mandatory for every badge.",
+          "description_nl": "Optionele Wio SX1262-radio voor communicatie over langere afstand met lage datasnelheid, naast de ingebouwde wifi/Bluetooth. Het is een optioneel uitbreidingspad: projecten die LoRa nodig hebben kunnen het toevoegen zonder dat elke badge de radio moet bevatten.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-75",
+          "category_en": "Connectivity & expansion",
+          "category_nl": "Connectiviteit & uitbreiding"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-49",
+          "label": "Debug LED",
+          "x": 220.0,
+          "y": 650.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#fff2cc",
+          "stroke": "#d6b656",
+          "dashed": false,
+          "kind": "component",
+          "description": "Dedicated LED used for firmware development, diagnostics or status indication.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "A dedicated diagnostic LED driven from the board-controller side. It provides a very simple indication that still works when the display or higher-level application UI is unavailable.",
+          "description_nl": "Een aparte diagnose-led aan de kant van de boardcontroller. Ze geeft een eenvoudige statusindicatie die ook bruikbaar blijft wanneer het display of de hogere applicatie-UI niet beschikbaar is.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-101",
+          "category_en": "Core & debug",
+          "category_nl": "Kern & debug"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-55",
+          "label": "Multimeter",
+          "x": 220.0,
+          "y": 670.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": true,
+          "kind": "component",
+          "description": "Measurement interface represented in the badge hardware overview. Select it to trace the signals connected to this function.",
+          "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
+          "description_en": "Board-controller measurement input shown in the original block diagram. It represents the badge’s measurement/experiment path into the CH32X035, keeping that function away from the main application processor.",
+          "description_nl": "Meet-/experimenteeringang naar de boardcontroller zoals weergegeven in het oorspronkelijke blokschema. Deze functie loopt via de CH32X035 en belast daardoor de hoofdprocessor niet rechtstreeks.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-106",
+          "category_en": "Sensors & measurement",
+          "category_nl": "Sensoren & metingen"
+        }
+      ],
+      "edges": [
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-1",
+          "source": "Tpw5ydV9RO-aA6iT4H93-1",
+          "target": "jARbVu97DnctKdf9LegH-11",
+          "labels": [
+            "PB6"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 500.0,
+              "y": 530.0
+            },
+            {
+              "as": "waypoint",
+              "x": 458.0,
+              "y": 550.0
+            },
+            {
+              "as": "waypoint",
+              "x": 550.0,
+              "y": 550.0
+            },
+            {
+              "as": "waypoint",
+              "x": 550.0,
+              "y": 368.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-13",
+          "source": "jARbVu97DnctKdf9LegH-2",
+          "target": "jARbVu97DnctKdf9LegH-10",
+          "labels": [],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 360.0,
+              "y": 415.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-16",
+          "source": "jARbVu97DnctKdf9LegH-2",
+          "target": "jARbVu97DnctKdf9LegH-12",
+          "labels": [],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 330.0,
+              "y": 425.0
+            },
+            {
+              "as": "waypoint",
+              "x": 330.0,
+              "y": 405.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-72",
+          "source": "jARbVu97DnctKdf9LegH-3",
+          "target": null,
+          "labels": [
+            "IO12"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 730.6399999999999,
+              "y": 425.76
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-73",
+          "source": "jARbVu97DnctKdf9LegH-3",
+          "target": "jARbVu97DnctKdf9LegH-22",
+          "labels": [],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 850.0,
+              "y": 438.0
+            },
+            {
+              "as": "waypoint",
+              "x": 850.0,
+              "y": 472.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-83",
+          "source": "jARbVu97DnctKdf9LegH-6",
+          "target": null,
+          "labels": [
+            "Reset"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 570.0,
+              "y": 460.0
+            },
+            {
+              "as": "waypoint",
+              "x": 570.0,
+              "y": 460.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-84",
+          "source": "jARbVu97DnctKdf9LegH-7",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "IO0"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-12",
+          "source": "jARbVu97DnctKdf9LegH-10",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "STDBY = PB0\nCHRG = PA7\nBAT MON = PC0"
+          ],
+          "points": []
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-18",
+          "source": "jARbVu97DnctKdf9LegH-12",
+          "target": "jARbVu97DnctKdf9LegH-11",
+          "labels": [],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 510.0,
+              "y": 400.0
+            },
+            {
+              "as": "waypoint",
+              "x": 510.0,
+              "y": 343.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-77",
+          "source": "jARbVu97DnctKdf9LegH-27",
+          "target": "jARbVu97DnctKdf9LegH-25",
+          "labels": [],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 870.0,
+              "y": 617.5
+            },
+            {
+              "as": "waypoint",
+              "x": 850.0,
+              "y": 558.0
+            },
+            {
+              "as": "waypoint",
+              "x": 850.0,
+              "y": 593.0
+            },
+            {
+              "as": "waypoint",
+              "x": 870.0,
+              "y": 593.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-82",
+          "source": "jARbVu97DnctKdf9LegH-20",
+          "target": null,
+          "labels": [
+            "IO10"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 571.7600000000002,
+              "y": 789.8799999999999
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-74",
+          "source": "jARbVu97DnctKdf9LegH-22",
+          "target": "jARbVu97DnctKdf9LegH-27",
+          "labels": [],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 850.0,
+              "y": 498.0
+            },
+            {
+              "as": "waypoint",
+              "x": 850.0,
+              "y": 532.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-78",
+          "source": "jARbVu97DnctKdf9LegH-22",
+          "target": null,
+          "labels": [
+            "IO21"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 732.0,
+              "y": 485.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-68",
+          "source": "jARbVu97DnctKdf9LegH-23",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "IO11"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 570.0,
+              "y": 875.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-62",
+          "source": "jARbVu97DnctKdf9LegH-24",
+          "target": null,
+          "labels": [
+            "IO38"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 568.56,
+              "y": 820.5600000000002
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-80",
+          "source": "jARbVu97DnctKdf9LegH-25",
+          "target": null,
+          "labels": [
+            "INT = IO21"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 732.8799999999999,
+              "y": 604.6400000000001
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-58",
+          "source": "Tpw5ydV9RO-aA6iT4H93-7",
+          "target": "eCAOqW3rDO46K8jk9g04-3",
+          "labels": [
+            "I²C = IO18/19"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 850.0,
+              "y": 930.0
+            },
+            {
+              "as": "waypoint",
+              "x": 850.0,
+              "y": 765.0
+            },
+            {
+              "as": "waypoint",
+              "x": 850.0,
+              "y": 950.0
+            },
+            {
+              "as": "waypoint",
+              "x": 420.0,
+              "y": 950.0
+            },
+            {
+              "as": "waypoint",
+              "x": 420.0,
+              "y": 908.0
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-60",
+          "source": "jARbVu97DnctKdf9LegH-25",
+          "target": "Tpw5ydV9RO-aA6iT4H93-7",
+          "labels": [],
+          "points": []
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-46",
+          "source": "jARbVu97DnctKdf9LegH-27",
+          "target": null,
+          "labels": [
+            "I²C",
+            "SCL = IO18\nSDA = IO9"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 732.3999999999999,
+              "y": 545.8800000000001
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-61",
+          "source": null,
+          "target": null,
+          "labels": [
+            "SPI = IO6,7,8\nCS = IO5\nDC = IO4"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 870.0,
+              "y": 710.0
+            },
+            {
+              "as": "targetPoint",
+              "x": 730.0,
+              "y": 710.02
+            }
+          ]
+        },
+        {
+          "id": "eCAOqW3rDO46K8jk9g04-30",
+          "source": null,
+          "target": null,
+          "labels": [
+            "SPI = IO6,7,8\nCS = IO14"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 870.64,
+              "y": 650.0
+            },
+            {
+              "as": "targetPoint",
+              "x": 729.9999999999999,
+              "y": 650.48
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-13",
+          "source": "Tpw5ydV9RO-aA6iT4H93-1",
+          "target": "Tpw5ydV9RO-aA6iT4H93-8",
+          "labels": [
+            "RST = PB1"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-36",
+          "source": "Tpw5ydV9RO-aA6iT4H93-1",
+          "target": "jARbVu97DnctKdf9LegH-29",
+          "labels": [
+            "PB12"
+          ],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 450.0,
+              "y": 940.0
+            },
+            {
+              "as": "waypoint",
+              "x": 750.0,
+              "y": 940.0
+            },
+            {
+              "as": "waypoint",
+              "x": 750.0,
+              "y": 780.0
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-40",
+          "source": "Tpw5ydV9RO-aA6iT4H93-1",
+          "target": null,
+          "labels": [
+            "RST = PB11"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 437.5,
+              "y": 695.0
+            },
+            {
+              "as": "targetPoint",
+              "x": 870.0,
+              "y": 742.5
+            },
+            {
+              "as": "waypoint",
+              "x": 450.0,
+              "y": 940.0
+            },
+            {
+              "as": "waypoint",
+              "x": 750.0,
+              "y": 940.0
+            },
+            {
+              "as": "waypoint",
+              "x": 750.0,
+              "y": 743.0
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-20",
+          "source": "Tpw5ydV9RO-aA6iT4H93-4",
+          "target": "Tpw5ydV9RO-aA6iT4H93-2",
+          "labels": [],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-21",
+          "source": "Tpw5ydV9RO-aA6iT4H93-4",
+          "target": "Tpw5ydV9RO-aA6iT4H93-5",
+          "labels": [],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-9",
+          "source": null,
+          "target": null,
+          "labels": [
+            "SPI = IO6,7,8\nCS = IO45\nRF SW = IO46\nBUSY = IO41\nIO1 = IO40"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 320.0,
+              "y": 745.14
+            },
+            {
+              "as": "targetPoint",
+              "x": 569.6800000000001,
+              "y": 744.7800000000001
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-15",
+          "source": "Tpw5ydV9RO-aA6iT4H93-1",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "DCK/SCL = IO42\nDIO/SDA = IO39\nBOOT/INT = IO3"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-17",
+          "source": "jARbVu97DnctKdf9LegH-2",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-18",
+          "source": "Tpw5ydV9RO-aA6iT4H93-7",
+          "target": null,
+          "labels": [
+            "TP INT = IO13"
+          ],
+          "points": [
+            {
+              "as": "targetPoint",
+              "x": 729.8399999999999,
+              "y": 760.6399999999999
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-22",
+          "source": "eCAOqW3rDO46K8jk9g04-3",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "I²S= IO15/16/17/47\nUART 0 = IO43/44"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-23",
+          "source": "eCAOqW3rDO46K8jk9g04-4",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PC15"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-24",
+          "source": "eCAOqW3rDO46K8jk9g04-5",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PB8"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-25",
+          "source": "eCAOqW3rDO46K8jk9g04-7",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PB9"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-26",
+          "source": "eCAOqW3rDO46K8jk9g04-8",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PB7"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-27",
+          "source": "eCAOqW3rDO46K8jk9g04-9",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PB10"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-28",
+          "source": "eCAOqW3rDO46K8jk9g04-25",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PA5/6"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-44",
+          "source": "Tpw5ydV9RO-aA6iT4H93-5",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "IO1"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-45",
+          "source": "Tpw5ydV9RO-aA6iT4H93-2",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "SDIN = IO16\nSCLK = IO2\nLRCK = IO47\nMCLK = IO17"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-50",
+          "source": "Tpw5ydV9RO-aA6iT4H93-49",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PB3"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-52",
+          "source": "jARbVu97DnctKdf9LegH-2",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "USB MON = PC3"
+          ],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 381.0,
+              "y": 440.0
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-56",
+          "source": "Tpw5ydV9RO-aA6iT4H93-55",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PA0"
+          ],
+          "points": []
+        }
+      ],
+      "svg": "assets/diagrams/svg/badge-2026.svg",
+      "svgViewBox": [
+        0.0,
+        0.0,
+        910.0,
+        640.0
+      ]
+    },
+    {
+      "id": "dj",
+      "title": "DJ Add-on 2026",
+      "repo": "https://github.com/Fri3dCamp/dj_2026/",
+      "intro": "Interactive version of the DJ add-on block diagram.",
+      "bounds": {
+        "x": 155.0,
+        "y": 435.0,
+        "w": 540.0,
+        "h": 370.0
+      },
+      "nodes": [
+        {
+          "id": "jARbVu97DnctKdf9LegH-1",
+          "label": "Badge\nExpansion\nConnector",
+          "x": 570.0,
+          "y": 480.0,
+          "w": 80.0,
+          "h": 280.0,
+          "fill": "#d5e8d4",
+          "stroke": "#82b366",
+          "dashed": false,
+          "kind": "connector",
+          "description": "Main electrical connection to the Fri3d Badge. It carries power and the control/data signals used by this add-on board.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "The DJ add-on plugs into the badge through the expansion connector. This is its host link: the add-on gets power and exchanges control data with the badge, while the CH32X035 locally handles the large number of knobs, faders, keys and LEDs.",
+          "description_nl": "De DJ-add-on klikt via de uitbreidingsconnector op de badge. Dit is de hostverbinding: de add-on krijgt voeding en wisselt besturingsdata uit met de badge, terwijl de CH32X035 lokaal de vele knoppen, faders, toetsen en leds verwerkt.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-113",
+          "category_en": "Connectivity",
+          "category_nl": "Connectiviteit"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-2",
+          "label": "USB C",
+          "x": 200.0,
+          "y": 530.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": false,
+          "kind": "connector",
+          "description": "USB-C connection for power and USB communication with the board.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "A second way to power and communicate with the DJ board independently of the badge connector. USB is wired to the CH32X035 and the local 3.3 V supply path, which makes stand-alone development and testing of the add-on possible.",
+          "description_nl": "Een tweede manier om het DJ-board onafhankelijk van de badgeconnector te voeden en ermee te communiceren. USB is verbonden met de CH32X035 en de lokale 3,3V-voeding, waardoor stand-alone ontwikkeling en testen van de add-on mogelijk is.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-114",
+          "category_en": "Connectivity",
+          "category_nl": "Connectiviteit"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-11",
+          "label": "3.3V Power rail",
+          "x": 370.0,
+          "y": 480.0,
+          "w": 90.0,
+          "h": 30.0,
+          "fill": "#f8cecc",
+          "stroke": "#b85450",
+          "dashed": false,
+          "kind": "power",
+          "description": "Regulated 3.3 V supply used by the board electronics and peripherals.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "Local regulated 3.3 V rail for the DJ electronics. It can be supplied from the badge expansion side or USB-C, giving the controller and inputs a common logic supply in either development or attached use.",
+          "description_nl": "Lokale gereguleerde 3,3V-rail voor de DJ-elektronica. Ze kan via de badge-uitbreiding of USB-C worden gevoed, zodat controller en ingangen in beide situaties dezelfde logische voeding gebruiken.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-116",
+          "category_en": "Power",
+          "category_nl": "Voeding"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-1",
+          "label": "WCH CH32X035",
+          "x": 370.0,
+          "y": 530.0,
+          "w": 90.0,
+          "h": 110.0,
+          "fill": "#ffe6cc",
+          "stroke": "#d79b00",
+          "dashed": false,
+          "kind": "controller",
+          "description": "Auxiliary CH32X035 microcontroller that handles local I/O and board-specific peripherals, reducing the amount of direct I/O required from the badge.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "The DJ board’s local I/O controller. It concentrates six potentiometers, three sliders, an eight-key silicone keypad, a two-channel encoder and the WS2812C LEDs behind one controller, then communicates with the badge through the expansion connector. This avoids routing every physical control directly to the badge.",
+          "description_nl": "De lokale I/O-controller van het DJ-board. Hij bundelt zes potentiometers, drie sliders, een siliconen keypad met acht toetsen, een tweekanaals encoder en de WS2812C-leds achter één controller en communiceert vervolgens via de uitbreidingsconnector met de badge. Zo hoeft niet elk bedieningselement rechtstreeks naar de badge te worden geleid.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-118",
+          "category_en": "Core",
+          "category_nl": "Kern"
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-1",
+          "label": "6 x Potentiometers",
+          "x": 200.0,
+          "y": 610.0,
+          "w": 100.0,
+          "h": 30.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "input",
+          "description": "Six analog rotary controls that provide continuous user input to the DJ board controller.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "Six continuous rotary controls sampled by the CH32X035. They are intended for parameters where an absolute knob position matters; the local controller can read all six and send compact control state to the badge.",
+          "description_nl": "Zes continue draaiknoppen die door de CH32X035 worden bemonsterd. Ze zijn bedoeld voor parameters waarbij een absolute knopstand belangrijk is; de lokale controller leest ze uit en stuurt compacte bedieningsdata naar de badge.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-124",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-2",
+          "label": "8 x WS2812C RGB LEDs",
+          "x": 200.0,
+          "y": 690.0,
+          "w": 100.0,
+          "h": 30.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "Eight individually addressable RGB LEDs for visual feedback and lighting effects on the DJ board.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "Eight addressable RGB LEDs provide programmable visual feedback around the DJ controls. Because WS2812C devices are daisy-chained, the CH32X035 can drive all eight from one LED data stream while still controlling every LED individually.",
+          "description_nl": "Acht adresseerbare RGB-leds geven programmeerbare visuele feedback rond de DJ-bediening. Omdat WS2812C-leds in serie worden gekoppeld, kan de CH32X035 alle acht via één datastroom aansturen en toch elke led afzonderlijk regelen.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-127",
+          "category_en": "Lighting",
+          "category_nl": "Verlichting"
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-3",
+          "label": "3 x Sliders",
+          "x": 200.0,
+          "y": 570.0,
+          "w": 100.0,
+          "h": 30.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "input",
+          "description": "Three analog faders for continuous level or parameter control.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "Three analog faders connected to the CH32X035 for parameters that benefit from a visible, absolute position. Reading them locally keeps multiple analog channels off the badge expansion connector.",
+          "description_nl": "Drie analoge faders naar de CH32X035 voor parameters waarbij een zichtbare, absolute stand nuttig is. Door ze lokaal uit te lezen hoeven meerdere analoge kanalen niet over de badge-uitbreidingsconnector te lopen.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-128",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "eulJ_nIh_JkLLLbzbtkw-1",
+          "label": "2 x 4 Silicone keypad",
+          "x": 200.0,
+          "y": 650.0,
+          "w": 100.0,
+          "h": 30.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "input",
+          "description": "Eight-button silicone keypad for direct performance and menu input.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "An eight-key silicone performance keypad scanned by the CH32X035. The local controller turns the physical switch matrix/key states into digital events for the badge instead of requiring eight separate host-side inputs.",
+          "description_nl": "Een siliconen performance-keypad met acht toetsen dat door de CH32X035 wordt gescand. De lokale controller zet de fysieke toetsstanden om in digitale events voor de badge, zonder acht afzonderlijke host-ingangen nodig te hebben.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-133",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        },
+        {
+          "id": "eulJ_nIh_JkLLLbzbtkw-2",
+          "label": "2Ch encoder input",
+          "x": 200.0,
+          "y": 730.0,
+          "w": 100.0,
+          "h": 30.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "input",
+          "description": "Two-channel rotary encoder input for relative knob movement and directional control.",
+          "url": "https://github.com/Fri3dCamp/dj_2026/",
+          "description_en": "Two-channel quadrature encoder input for relative rotary movement. Unlike a potentiometer, an encoder reports direction and steps rather than an absolute position, making it useful for endless navigation or parameter adjustment. The CH32X035 decodes those transitions locally.",
+          "description_nl": "Tweekanaals quadratuur-encoder voor relatieve draaibeweging. Anders dan een potentiometer geeft een encoder richting en stappen door in plaats van een absolute stand, ideaal voor eindeloze navigatie of parameterwijzigingen. De CH32X035 decodeert die overgangen lokaal.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-136",
+          "category_en": "Controls",
+          "category_nl": "Bediening"
+        }
+      ],
+      "edges": [
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-7",
+          "source": "jARbVu97DnctKdf9LegH-1",
+          "target": "jARbVu97DnctKdf9LegH-11",
+          "labels": [],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 515.0,
+              "y": 550.0
+            },
+            {
+              "as": "waypoint",
+              "x": 515.0,
+              "y": 495.0
+            }
+          ]
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-6",
+          "source": "jARbVu97DnctKdf9LegH-11",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [],
+          "points": []
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-18",
+          "source": "jARbVu97DnctKdf9LegH-2",
+          "target": "jARbVu97DnctKdf9LegH-11",
+          "labels": [],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 320.0,
+              "y": 399.9999999999999
+            },
+            {
+              "as": "waypoint",
+              "x": 330.0,
+              "y": 535.0
+            },
+            {
+              "as": "waypoint",
+              "x": 330.0,
+              "y": 495.0
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-15",
+          "source": "Tpw5ydV9RO-aA6iT4H93-1",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "DCK/SCL = IO18\nDIO/SDA = IO9\nUART3 = IO43/44"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-52",
+          "source": "jARbVu97DnctKdf9LegH-2",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 340.0,
+              "y": 545.0
+            },
+            {
+              "as": "waypoint",
+              "x": 340.0,
+              "y": 558.0
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-56",
+          "source": "TodTaXLGHYw3wNQxsv4H-3",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PA3/4/5"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 320.0,
+              "y": 680.0
+            }
+          ]
+        },
+        {
+          "id": "eulJ_nIh_JkLLLbzbtkw-4",
+          "source": "TodTaXLGHYw3wNQxsv4H-2",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PA7"
+          ],
+          "points": []
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-4",
+          "source": "TodTaXLGHYw3wNQxsv4H-1",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PA2/6\nPB0/5\nPC0/3"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 340.0,
+              "y": 600.0
+            },
+            {
+              "as": "targetPoint",
+              "x": 410.0,
+              "y": 590.0
+            }
+          ]
+        },
+        {
+          "id": "eulJ_nIh_JkLLLbzbtkw-5",
+          "source": "eulJ_nIh_JkLLLbzbtkw-1",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PB6/7/8/11\nPC14/15"
+          ],
+          "points": []
+        },
+        {
+          "id": "eulJ_nIh_JkLLLbzbtkw-3",
+          "source": "eulJ_nIh_JkLLLbzbtkw-2",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "PA0/1\nPA9/10"
+          ],
+          "points": []
+        }
+      ],
+      "svg": "assets/diagrams/svg/dj-2026.svg",
+      "svgViewBox": [
+        0.0,
+        0.0,
+        470.0,
+        300.0
+      ]
+    },
+    {
+      "id": "communicator",
+      "title": "Communicator / Keeb 2026",
+      "repo": "https://github.com/Fri3dCamp/communicator_2026/",
+      "intro": "Interactive version of the communicator keyboard/audio block diagram.",
+      "bounds": {
+        "x": 155.0,
+        "y": 435.0,
+        "w": 540.0,
+        "h": 370.0
+      },
+      "nodes": [
+        {
+          "id": "jARbVu97DnctKdf9LegH-1",
+          "label": "Badge\nExpansion\nConnector",
+          "x": 570.0,
+          "y": 480.0,
+          "w": 80.0,
+          "h": 280.0,
+          "fill": "#d5e8d4",
+          "stroke": "#82b366",
+          "dashed": false,
+          "kind": "connector",
+          "description": "Main electrical connection to the Fri3d Badge. It carries power and the control/data signals used by this add-on board.",
+          "url": "https://github.com/Fri3dCamp/communicator_2026/",
+          "description_en": "The Communicator’s host connection to the Fri3d Badge. It carries power/control communication and also connects the audio side of the add-on to the badge: the block diagram shows the I²S microphone feeding toward this connector while the local controller communicates through it as well.",
+          "description_nl": "De hostverbinding van de Communicator met de Fri3d Badge. Ze voert voeding/besturingscommunicatie en verbindt ook het audiogedeelte met de badge: in het blokschema loopt de I²S-microfoon richting deze connector en communiceert ook de lokale controller erlangs.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-139",
+          "category_en": "Connectivity",
+          "category_nl": "Connectiviteit"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-2",
+          "label": "USB C",
+          "x": 200.0,
+          "y": 530.0,
+          "w": 100.0,
+          "h": 20.0,
+          "fill": "#e1d5e7",
+          "stroke": "#9673a6",
+          "dashed": false,
+          "kind": "connector",
+          "description": "USB-C connection for power and USB communication with the board.",
+          "url": "https://github.com/Fri3dCamp/communicator_2026/",
+          "description_en": "USB-C lets the Communicator’s CH32X035 operate independently of the badge. This matters because the keyboard is designed to work as a USB keyboard as well as an input device when the add-on is attached to the badge.",
+          "description_nl": "USB-C laat de CH32X035 van de Communicator onafhankelijk van de badge werken. Dat is belangrijk omdat het toetsenbord ook als USB-toetsenbord werkt, naast gebruik als invoerapparaat wanneer de add-on op de badge zit.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-140",
+          "category_en": "Connectivity",
+          "category_nl": "Connectiviteit"
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-11",
+          "label": "3.3V Power rail",
+          "x": 370.0,
+          "y": 480.0,
+          "w": 90.0,
+          "h": 30.0,
+          "fill": "#f8cecc",
+          "stroke": "#b85450",
+          "dashed": false,
+          "kind": "power",
+          "description": "Regulated 3.3 V supply used by the board electronics and peripherals.",
+          "url": "https://github.com/Fri3dCamp/communicator_2026/",
+          "description_en": "Local 3.3 V logic supply for the Communicator. The diagram allows it to be fed from the badge expansion connector or USB-C, supporting both badge-mounted use and stand-alone USB keyboard/development use.",
+          "description_nl": "Lokale 3,3V-logische voeding voor de Communicator. Volgens het diagram kan ze via de badge-uitbreidingsconnector of USB-C worden gevoed, voor zowel gebruik op de badge als stand-alone USB-toetsenbord/ontwikkeling.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-142",
+          "category_en": "Power",
+          "category_nl": "Voeding"
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-1",
+          "label": "WCH CH32X035",
+          "x": 370.0,
+          "y": 530.0,
+          "w": 90.0,
+          "h": 110.0,
+          "fill": "#ffe6cc",
+          "stroke": "#d79b00",
+          "dashed": false,
+          "kind": "controller",
+          "description": "Auxiliary CH32X035 microcontroller that handles local I/O and board-specific peripherals, reducing the amount of direct I/O required from the badge.",
+          "url": "https://github.com/Fri3dCamp/communicator_2026/",
+          "description_en": "The Communicator’s controller, chosen to replace the LANA TNY used by the previous generation. Its main job is the keyboard: it scans the KeebDeck-derived keys, communicates with the badge and can expose the keyboard directly over USB. It also sits in the local audio/output control path shown in the diagram.",
+          "description_nl": "De controller van de Communicator, gekozen als vervanger voor de LANA TNY uit de vorige generatie. Zijn hoofdtaak is het toetsenbord: hij scant de van KeebDeck afgeleide toetsen, communiceert met de badge en kan het toetsenbord rechtstreeks via USB aanbieden. Hij zit ook in het lokale audio/uitvoerpad dat in het diagram is weergegeven.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-146",
+          "category_en": "Core",
+          "category_nl": "Kern"
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-1",
+          "label": "DAC with amplifier\nMAX98357A",
+          "x": 200.0,
+          "y": 640.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "MAX98357A I²S digital-to-analog converter and amplifier used to drive the communicator speaker output.",
+          "url": "https://github.com/Fri3dCamp/communicator_2026/",
+          "description_en": "The speaker-output stage. The MAX98357A accepts digital I²S audio and combines digital-to-analog conversion with a power amplifier, so the Communicator can drive its supplied speaker without a separate analog DAC and amplifier chain.",
+          "description_nl": "De luidsprekeruitgang. De MAX98357A ontvangt digitale I²S-audio en combineert digitaal-naar-analoogomzetting met een eindversterker, zodat de Communicator de meegeleverde luidspreker kan aansturen zonder aparte analoge DAC en versterkerketen.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-153",
+          "category_en": "Audio",
+          "category_nl": "Audio"
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-2",
+          "label": "Microphone\nSPH0645LM4H-B",
+          "x": 200.0,
+          "y": 710.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "Digital I²S MEMS microphone used to capture audio on the Communicator.",
+          "url": "https://github.com/Fri3dCamp/communicator_2026/",
+          "description_en": "Digital MEMS microphone for voice/audio capture. It outputs I²S directly, avoiding a separate analog microphone preamplifier and ADC; in the block diagram its audio stream is routed toward the badge through the expansion connection.",
+          "description_nl": "Digitale MEMS-microfoon voor spraak/audio-opname. Hij levert rechtstreeks I²S en heeft daardoor geen aparte analoge microfoonvoorversterker en ADC nodig; in het blokschema loopt de audiostroom via de uitbreidingsverbinding richting badge.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-154",
+          "category_en": "Audio",
+          "category_nl": "Audio"
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-3",
+          "label": "Solder Party KeebDeck",
+          "x": 200.0,
+          "y": 570.0,
+          "w": 100.0,
+          "h": 50.0,
+          "fill": "#dae8fc",
+          "stroke": "#6c8ebf",
+          "dashed": false,
+          "kind": "component",
+          "description": "Keyboard section based on the Solder Party KeebDeck design. The CH32X035 scans the keys and can expose the keyboard functionality to the badge or over USB.",
+          "url": "https://github.com/Fri3dCamp/communicator_2026/",
+          "description_en": "The Communicator keyboard is based on Solder Party’s KeebDeck design. The CH32X035 scans this keyboard locally; the result can be sent to the badge when mounted, or presented as a normal USB keyboard when the Communicator is used over USB-C.",
+          "description_nl": "Het toetsenbord van de Communicator is gebaseerd op het KeebDeck-ontwerp van Solder Party. De CH32X035 scant het toetsenbord lokaal; de invoer kan naar de badge worden gestuurd wanneer de add-on gemonteerd is, of als normaal USB-toetsenbord worden aangeboden via USB-C.",
+          "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-155",
+          "category_en": "Keyboard",
+          "category_nl": "Toetsenbord"
+        }
+      ],
+      "edges": [
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-7",
+          "source": "jARbVu97DnctKdf9LegH-1",
+          "target": "jARbVu97DnctKdf9LegH-11",
+          "labels": [],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 515.0,
+              "y": 550.0
+            },
+            {
+              "as": "waypoint",
+              "x": 515.0,
+              "y": 495.0
+            }
+          ]
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-6",
+          "source": "jARbVu97DnctKdf9LegH-11",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [],
+          "points": []
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-18",
+          "source": "jARbVu97DnctKdf9LegH-2",
+          "target": "jARbVu97DnctKdf9LegH-11",
+          "labels": [],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 320.0,
+              "y": 399.9999999999999
+            },
+            {
+              "as": "waypoint",
+              "x": 330.0,
+              "y": 535.0
+            },
+            {
+              "as": "waypoint",
+              "x": 330.0,
+              "y": 495.0
+            }
+          ]
+        },
+        {
+          "id": "jARbVu97DnctKdf9LegH-82",
+          "source": "TodTaXLGHYw3wNQxsv4H-1",
+          "target": null,
+          "labels": [
+            "LRCK = IO47\nBCK = IO2 DOUT = IO16"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 320.0,
+              "y": 790.0
+            },
+            {
+              "as": "targetPoint",
+              "x": 570.0,
+              "y": 665.0
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-9",
+          "source": "TodTaXLGHYw3wNQxsv4H-2",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "LRCK = IO47 SCLK = IO17 DIN = IO15"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 320.0,
+              "y": 745.14
+            },
+            {
+              "as": "targetPoint",
+              "x": 569.6800000000001,
+              "y": 744.7800000000001
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-15",
+          "source": "Tpw5ydV9RO-aA6iT4H93-1",
+          "target": "jARbVu97DnctKdf9LegH-1",
+          "labels": [
+            "DCK/SCL = IO18\nDIO/SDA = IO9\nUART1=IO43/44"
+          ],
+          "points": []
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-52",
+          "source": "jARbVu97DnctKdf9LegH-2",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [],
+          "points": [
+            {
+              "as": "waypoint",
+              "x": 340.0,
+              "y": 545.0
+            },
+            {
+              "as": "waypoint",
+              "x": 340.0,
+              "y": 558.0
+            }
+          ]
+        },
+        {
+          "id": "Tpw5ydV9RO-aA6iT4H93-56",
+          "source": "TodTaXLGHYw3wNQxsv4H-3",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 320.0,
+              "y": 680.0
+            }
+          ]
+        },
+        {
+          "id": "TodTaXLGHYw3wNQxsv4H-4",
+          "source": "TodTaXLGHYw3wNQxsv4H-1",
+          "target": "Tpw5ydV9RO-aA6iT4H93-1",
+          "labels": [
+            "SD MODE = PC0"
+          ],
+          "points": [
+            {
+              "as": "sourcePoint",
+              "x": 340.0,
+              "y": 600.0
+            },
+            {
+              "as": "targetPoint",
+              "x": 410.0,
+              "y": 590.0
+            }
+          ]
+        }
+      ],
+      "svg": "assets/diagrams/svg/communicator-2026.svg",
+      "svgViewBox": [
+        0.0,
+        0.0,
+        470.0,
+        300.0
+      ]
+    }
+  ]
+}

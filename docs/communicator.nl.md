@@ -1,5 +1,8 @@
 ---
 title: "Communicator add-on"
+hide:
+  - toc
+
 ---
 
 # Communicator add-on
@@ -7,6 +10,15 @@ title: "Communicator add-on"
 Om je communicator te doen werken, moet je deze nog assambleren alvorens je deze kan aansluiten ops de badge.
 
 ## HARDWARE
+
+
+
+### Interactief hardwareoverzicht
+
+Beweeg over een component voor een korte uitleg en om de verbindingen te markeren. Klik op een component om de details vast te zetten.
+
+<a href="/badge_2026/assets/uploads/communicator-blockdiagram.png" target="_blank" rel="noopener">Open origineel PNG-diagram ↗</a>
+<div data-fri3d-diagram="communicator" data-lang="nl"></div>
 
 ### Communicator eigenschappen
 
@@ -21,8 +33,6 @@ De communicator bestaat uit:
 Je kan het toetsenbord ook als USB toetsenbord gebruiken.
 
 De ontwerp- en bronbestanden kan je terugvinden in de [GitHub repository](https://github.com/Fri3dCamp/communicator_2026)
-
-![blockdiagram](/badge_2026/assets/uploads/communicator-blockdiagram.png)
 
 ### Stap voor stap assemblage handleiding
 

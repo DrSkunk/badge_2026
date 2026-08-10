@@ -17,7 +17,7 @@ To get your DJ Add-on working, you first need to assemble it before you can conn
 
 Hover over a component for a short explanation and to highlight its connections. Click a component to pin its details.
 
-<a href="/badge_2026/assets/uploads/dj-blockdiagram.png" target="_blank" rel="noopener">Open origineel PNG-diagram ↗</a>
+<a href="/badge_2026/assets/uploads/dj-blockdiagram.png" target="_blank" rel="noopener">Open the original PNG diagram ↗</a>
 <div data-fri3d-diagram="dj" data-lang="en"></div>
 
 ### DJ add-on features

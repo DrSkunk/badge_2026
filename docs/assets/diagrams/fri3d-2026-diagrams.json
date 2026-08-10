@@ -44,8 +44,8 @@
           "kind": "connector",
           "description": "USB-C connection for power and USB communication with the board.",
           "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
-          "description_en": "The badge’s USB-C port has two jobs: it powers the board/charges the battery and provides native USB communication. Because the ESP32-S3 has USB built in, the badge does not need a separate USB-to-serial bridge; the USB connection is also available to the CH32X035 board controller.",
-          "description_nl": "De USB-C-poort van de badge heeft twee functies: de badge voeden/de batterij laden en native USB-communicatie voorzien. Omdat de ESP32-S3 zelf USB ondersteunt, is geen aparte USB-naar-serieelbrug nodig; de USB-verbinding is ook beschikbaar voor de CH32X035-boardcontroller.",
+          "description_en": "The badge’s USB-C port has two jobs: it powers the board/charges the battery and provides native USB communication. Because the ESP32-S3 has USB built in, the badge does not need a separate USB-to-serial bridge. The CH32X035 board controller only senses whether USB power is present.",
+          "description_nl": "De USB-C-poort van de badge heeft twee functies: de badge voeden/de batterij laden en native USB-communicatie voorzien. Omdat de ESP32-S3 zelf USB ondersteunt, is geen aparte USB-naar-serieelbrug nodig. De CH32X035-boardcontroller detecteert enkel of er USB-voeding aanwezig is.",
           "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-7",
           "category_en": "Connectivity & expansion",
           "category_nl": "Connectiviteit & uitbreiding"
@@ -139,8 +139,8 @@
           "kind": "power",
           "description": "Two XC6210B33 regulators provide stable 3.3 V rails for the badge electronics and connected peripherals.",
           "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
-          "description_en": "Two separate 3.3 V regulator rails are used instead of putting the whole badge on one supply. One rail can be switched to save energy; the hardware repository notes that this lets the Wi-Fi-related supply be disabled while the ESP32-S3 and board controller remain powered.",
-          "description_nl": "Twee afzonderlijke 3,3V-regelaars voeden de badge in plaats van alles op één voedingsrail te plaatsen. Eén rail kan worden uitgeschakeld om energie te besparen; volgens het hardwareontwerp kan zo de extra voeding worden uitgeschakeld terwijl de ESP32-S3 en boardcontroller actief blijven.",
+          "description_en": "Two separate 3.3 V regulator rails are used instead of putting the whole badge on one supply. One rail permanently powers the ESP32-S3; the other feeds the peripherals and can be switched off by the CH32X035 board controller to save energy.",
+          "description_nl": "Twee afzonderlijke 3,3V-regelaars voeden de badge in plaats van alles op één voedingsrail te plaatsen. Eén rail voedt permanent de ESP32-S3; de andere voedt de randapparatuur en kan door de CH32X035-boardcontroller worden uitgeschakeld om energie te besparen.",
           "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-21",
           "category_en": "Power",
           "category_nl": "Voeding"
@@ -483,15 +483,15 @@
           "kind": "controller",
           "description": "Auxiliary CH32X035 microcontroller that handles local I/O and board-specific peripherals, reducing the amount of direct I/O required from the badge.",
           "url": "https://github.com/Fri3dCamp/badge_2026_hw/",
-          "description_en": "The badge’s board controller and I/O companion. It collects many physical controls and board-management signals, controls functions such as the LCD backlight, and provides extra I/O alongside the ESP32-S3. It also has its own USB connection in the block diagram, which is useful for board-level firmware and USB functions.",
-          "description_nl": "De boardcontroller en I/O-hulpchip van de badge. Hij verzamelt veel fysieke bedieningselementen en boardmanagementsignalen, stuurt onder meer de lcd-achtergrondverlichting aan en levert extra I/O naast de ESP32-S3. In het blokschema heeft hij ook een eigen USB-verbinding, nuttig voor boardfirmware en USB-functies.",
+          "description_en": "The badge’s board controller and I/O companion. It collects many physical controls and board-management signals, controls functions such as the LCD backlight, and provides extra I/O alongside the ESP32-S3. It also monitors USB power and the battery voltage.",
+          "description_nl": "De boardcontroller en I/O-hulpchip van de badge. Hij verzamelt veel fysieke bedieningselementen en boardmanagementsignalen, stuurt onder meer de lcd-achtergrondverlichting aan en levert extra I/O naast de ESP32-S3. Daarnaast bewaakt hij de USB-voeding en de batterijspanning.",
           "svg_cell_id": "Y9RcqmsIpRdn2LYjlgFR-68",
           "category_en": "Core & debug",
           "category_nl": "Kern & debug"
         },
         {
           "id": "Tpw5ydV9RO-aA6iT4H93-2",
-          "label": "I2S DAC\nCJC43334H",
+          "label": "I2S DAC\nCJC4334H",
           "x": 870.0,
           "y": 800.0,
           "w": 100.0,
@@ -690,7 +690,7 @@
         {
           "id": "jARbVu97DnctKdf9LegH-72",
           "source": "jARbVu97DnctKdf9LegH-3",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "IO12"
           ],
@@ -723,7 +723,7 @@
         {
           "id": "jARbVu97DnctKdf9LegH-83",
           "source": "jARbVu97DnctKdf9LegH-6",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "Reset"
           ],
@@ -807,7 +807,7 @@
         {
           "id": "jARbVu97DnctKdf9LegH-82",
           "source": "jARbVu97DnctKdf9LegH-20",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "IO10"
           ],
@@ -840,7 +840,7 @@
         {
           "id": "jARbVu97DnctKdf9LegH-78",
           "source": "jARbVu97DnctKdf9LegH-22",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "IO21"
           ],
@@ -870,7 +870,7 @@
         {
           "id": "jARbVu97DnctKdf9LegH-62",
           "source": "jARbVu97DnctKdf9LegH-24",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "IO38"
           ],
@@ -885,9 +885,9 @@
         {
           "id": "jARbVu97DnctKdf9LegH-80",
           "source": "jARbVu97DnctKdf9LegH-25",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
-            "INT = IO21"
+            "INT = IO48"
           ],
           "points": [
             {
@@ -902,7 +902,7 @@
           "source": "Tpw5ydV9RO-aA6iT4H93-7",
           "target": "eCAOqW3rDO46K8jk9g04-3",
           "labels": [
-            "I²C = IO18/19"
+            "I²C = IO9/18"
           ],
           "points": [
             {
@@ -942,7 +942,7 @@
         {
           "id": "jARbVu97DnctKdf9LegH-46",
           "source": "jARbVu97DnctKdf9LegH-27",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "I²C",
             "SCL = IO18\nSDA = IO9"
@@ -957,8 +957,8 @@
         },
         {
           "id": "jARbVu97DnctKdf9LegH-61",
-          "source": null,
-          "target": null,
+          "source": "jARbVu97DnctKdf9LegH-28",
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "SPI = IO6,7,8\nCS = IO5\nDC = IO4"
           ],
@@ -977,8 +977,8 @@
         },
         {
           "id": "eCAOqW3rDO46K8jk9g04-30",
-          "source": null,
-          "target": null,
+          "source": "eCAOqW3rDO46K8jk9g04-29",
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "SPI = IO6,7,8\nCS = IO14"
           ],
@@ -1032,9 +1032,9 @@
         {
           "id": "Tpw5ydV9RO-aA6iT4H93-40",
           "source": "Tpw5ydV9RO-aA6iT4H93-1",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-28",
           "labels": [
-            "RST = PB11"
+            "RST = PB11 (LCD + touch)"
           ],
           "points": [
             {
@@ -1080,8 +1080,8 @@
         },
         {
           "id": "Tpw5ydV9RO-aA6iT4H93-9",
-          "source": null,
-          "target": null,
+          "source": "Tpw5ydV9RO-aA6iT4H93-8",
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "SPI = IO6,7,8\nCS = IO45\nRF SW = IO46\nBUSY = IO41\nIO1 = IO40"
           ],
@@ -1111,13 +1111,15 @@
           "id": "Tpw5ydV9RO-aA6iT4H93-17",
           "source": "jARbVu97DnctKdf9LegH-2",
           "target": "jARbVu97DnctKdf9LegH-1",
-          "labels": [],
+          "labels": [
+            "USB = IO19/20"
+          ],
           "points": []
         },
         {
           "id": "Tpw5ydV9RO-aA6iT4H93-18",
           "source": "Tpw5ydV9RO-aA6iT4H93-7",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "TP INT = IO13"
           ],
@@ -1134,7 +1136,7 @@
           "source": "eCAOqW3rDO46K8jk9g04-3",
           "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
-            "I²S= IO15/16/17/47\nUART 0 = IO43/44"
+            "I²S = IO2/15/16/17/47\nUART0 = IO43/44"
           ],
           "points": []
         },
@@ -1781,7 +1783,7 @@
         {
           "id": "jARbVu97DnctKdf9LegH-82",
           "source": "TodTaXLGHYw3wNQxsv4H-1",
-          "target": null,
+          "target": "jARbVu97DnctKdf9LegH-1",
           "labels": [
             "LRCK = IO47\nBCK = IO2 DOUT = IO16"
           ],

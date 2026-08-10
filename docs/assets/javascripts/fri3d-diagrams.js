@@ -4,6 +4,9 @@
   const scriptUrl = new URL(document.currentScript?.src || location.href, location.href);
   const DATA_URL = new URL('../diagrams/fri3d-2026-diagrams.json', scriptUrl).href;
   const ASSET_BASE = new URL('../../', scriptUrl);
+  // Hotspot editor: open any diagram page with ?fri3d-edit to move/resize/
+  // add/remove board hotspots and export a PHYSICAL_BOARDS config snippet.
+  const EDIT_MODE = new URLSearchParams(location.search).has('fri3d-edit');
   let dataPromise;
 
   const I18N = {
@@ -89,42 +92,45 @@
         side: 'front',
         image: 'assets/images/badge-front.png',
         hotspots: [
-          {label:'LCD / touch', match:['ST7789v','Backlight','Touch'], x:26.8,y:4.0,w:46.5,h:67.0},
-          {label:'IR receiver', match:['IR Receiver'], x:20.8,y:15.6,w:5.0,h:11.0},
-          {label:'WS2812 NeoPixels', match:['WS2812'], x:30.2,y:70.5,w:38.7,h:13.0},
-          {label:'Menu', match:['Menu Button'], x:36.2,y:80.0,w:5.8,h:14.0},
-          {label:'Start', match:['Start Button'], x:58.0,y:80.0,w:6.1,h:14.0},
-          {label:'Joystick', match:['Joystick'], x:8.0,y:34.0,w:14.4,h:30},
-          {label:'X', match:['X Button'], x:84.0,y:28.4,w:7.5,h:12.5},
-          {label:'Y', match:['Y Button'], x:76.0,y:44.5,w:7.6,h:12.7},
-          {label:'A', match:['A Button'], x:91.6,y:44.2,w:7.0,h:12.7},
-          {label:'B', match:['B Button'], x:84.0,y:63.3,w:7.6,h:12.5}
+          {label:'LCD / touch', match:['ST7789v','Backlight','Touch'], x:26.8,y:4,w:46.5,h:67},
+          {label:'IR receiver', match:['IR Receiver'], x:20.2,y:16.1,w:5.3,h:11},
+          {label:'WS2812 NeoPixels', match:['WS2812'], x:30.2,y:70.5,w:38.7,h:13},
+          {label:'Menu', match:['Menu Button'], x:36.2,y:81.3,w:5.6,h:11.6},
+          {label:'Start', match:['Start Button'], x:58.4,y:81.9,w:5.4,h:10.8},
+          {label:'Joystick', match:['Joystick'], x:7.4,y:34,w:15.3,h:31.4},
+          {label:'X', match:['X Button'], x:84.5,y:28.4,w:5.7,h:11.1},
+          {label:'Y', match:['Y Button'], x:76.9,y:45.3,w:5.5,h:11.3},
+          {label:'A', match:['A Button'], x:92,y:45.3,w:5.4,h:11.6},
+          {label:'B', match:['B Button'], x:84.7,y:63.2,w:5.6,h:10.3}
         ]
       },
       {
         side: 'back',
         image: 'assets/images/badge-back.png',
         hotspots: [
-          {label:'ESP32-S3', match:['ESP32-S3 based'], x:42.0,y:5.0,w:16.2,h:46.0},
+          {label:'ESP32-S3', match:['ESP32-S3 based'], x:41.7,y:5,w:17,h:46.2},
           {label:'USB-C', match:['USB C'], x:23.5,y:2.1,w:8.7,h:16.4},
-          {label:'Reset', match:['Reset Button'], x:8.6,y:51.0,w:5.2,h:13.7},
-          {label:'MicroSD', match:['MicroSD Card'], x:26.4,y:64.0,w:14.2,h:29.7},
+          {label:'Reset', match:['Reset Button'], x:8.6,y:51,w:5.2,h:13.7},
+          {label:'MicroSD', match:['MicroSD Card'], x:26.4,y:64,w:14.2,h:36},
           {label:'CH32X035', match:['WCH CH32X035'], x:64.3,y:31.3,w:7.4,h:13.5},
-          {label:'Accelerometer', match:['Accelerometer'], x:86.9,y:38.3,w:6.5,h:13.5},
-          {label:'Buzzer', match:['Buzzer'], x:44.2,y:55.1,w:11.3,h:23.0},
-          {label:'Expansion', match:['Expansion Connector'], x:43.7,y:78.0,w:13.6,h:13.5},
-          {label:'Power switch', match:['Power Switch'], x:72.1,y:87.2,w:5.1,h:10.4},
-          {label:'LoRa', match:['LoRa Module'], x:3.8,y:21.0,w:11.2,h:27.0},
-          {label:'SAO', match:['SAO v1.69 Bis'], x:85.8,y:4.5,w:8.6,h:16.0},
-          {label:'Debug LED', match:['Debug LED'], x:93.4,y:55.5,w:6.3,h:17.0},
-          {label:'Multimeter', match:['Multimeter'], x:89.8,y:71.5,w:7.8,h:23.0},
+          {label:'Accelerometer', match:['Accelerometer'], x:88,y:38.5,w:3.7,h:8.6},
+          {label:'Buzzer', match:['Buzzer'], x:44.2,y:55.1,w:11.3,h:23},
+          {label:'Expansion', match:['Expansion Connector'], x:43.7,y:78,w:13.6,h:13.5},
+          {label:'Power switch', match:['Power Switch'], x:70.5,y:86.5,w:9,h:10.3},
+          {label:'LoRa', match:['LoRa Module'], x:3,y:22.9,w:11.2,h:27},
+          {label:'SAO', match:['SAO v1.69 Bis'], x:85.8,y:4.5,w:8.6,h:16},
+          {label:'Debug LED', match:['Debug LED'], x:88.6,y:54.7,w:10.3,h:18.4},
+          {label:'Multimeter', match:['Multimeter'], x:90,y:71.2,w:8.8,h:24.7},
           {label:'STEMMA QT', match:['Stemma QT connector'], x:93.4,y:24.3,w:5.6,h:13.8},
-          {label:'Headset', match:['Headset TRRS Connector'], x:80.7,y:1.0,w:5.6,h:21.5},
-          {label:'I²S DAC', match:['I2S DAC'], x:78.5,y:43.5,w:7.5,h:15.0},
-          {label:'Mic amplifier', match:['Microphone Amplifier','Microphone'], x:69,y:15.5,w:4.6,h:10.0},
-          {label:'Battery charger', match:['Battery Charger'], x:70.0,y:65.0,w:7,h:14.5},
-          {label:'3.3V rails', match:['3.3V Power rails'], rects:[{x:32.7,y:20.0,w:4.7,h:7.5},{x:18.2,y:37.6,w:4.7,h:10}]},
-          {label:'Badge Link', match:['Badge Link'], x:0.8,y:68.0,w:6.4,h:24.0}
+          {label:'Headset', match:['Headset TRRS Connector'], x:80.4,y:1.5,w:5.9,h:25.8},
+          {label:'I²S DAC', match:['I2S DAC'], x:78.5,y:43.5,w:7.5,h:15},
+          {label:'Mic amplifier', match:['Microphone Amplifier','Microphone'], x:69,y:15.5,w:4.6,h:10},
+          {label:'Battery charger', match:['Battery Charger'], x:70,y:65,w:7,h:14.5},
+          {label:'3.3V rails', match:['3.3V Power rails'], rects:[
+            {x:32.7,y:20,w:4.7,h:7.5},
+            {x:18.2,y:37.6,w:4.7,h:10}
+          ]},
+          {label:'Badge Link', match:['Badge Link'], x:0.9,y:69.8,w:6.4,h:27}
         ]
       }
     ],
@@ -208,6 +214,29 @@
   ));
 
   const normalize = value => String(value ?? '').replace(/\s+/g, ' ').trim().toLowerCase();
+
+  // Serialize one diagram's board maps as a snippet that can be pasted
+  // straight back into PHYSICAL_BOARDS above (used by the ?fri3d-edit editor).
+  function serializeBoard(id) {
+    const sides = PHYSICAL_BOARDS[id] || [];
+    const num = v => String(Math.round(v * 10) / 10);
+    const rectOf = r => `x:${num(r.x)},y:${num(r.y)},w:${num(r.w)},h:${num(r.h)}`;
+    const q = s => `'${String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
+    const defOf = def => {
+      const match = `[${def.match.map(q).join(',')}]`;
+      if (def.rects) {
+        return `          {label:${q(def.label)}, match:${match}, rects:[\n` +
+          def.rects.map(r => `            {${rectOf(r)}}`).join(',\n') +
+          `\n          ]}`;
+      }
+      return `          {label:${q(def.label)}, match:${match}, ${rectOf(def)}}`;
+    };
+    return `    ${id}: [\n` + sides.map(side =>
+      `      {\n        side: ${q(side.side)},\n        image: ${q(side.image)},\n        hotspots: [\n` +
+      side.hotspots.map(defOf).join(',\n') +
+      `\n        ]\n      }`
+    ).join(',\n') + `\n    ],`;
+  }
 
   const slugify = value => String(value)
     .split('\n')[0]
@@ -673,7 +702,9 @@
         const overlay = figure.querySelector('.fri3d-physical__overlay');
         side.hotspots.forEach(def => {
           const ids = matchIds(def.match);
-          if (!ids.length) return;
+          // Unmatched definitions are dropped normally, but the editor shows
+          // them (flagged red) so they can be fixed instead of vanishing.
+          if (!ids.length && !EDIT_MODE) return;
 
           // A definition covers one rectangle (x/y/w/h) or several (`rects`),
           // e.g. six potentiometers that are one component in the diagram.
@@ -686,24 +717,27 @@
             el.style.cssText = `left:${rect.x}%;top:${rect.y}%;width:${rect.w}%;height:${rect.h}%`;
             el.setAttribute('aria-label', def.label);
             el.innerHTML = `<span>${esc(def.label)}</span>`;
+            if (!ids.length) el.classList.add('is-unmatched');
 
-            const enter = () => {
-              hovered = ids[0];
-              ensureItemVisible(ids[0]);
-              updateFocus();
-            };
-            const leave = () => {
-              hovered = null;
-              updateFocus();
-            };
-            el.addEventListener('pointerenter', enter);
-            el.addEventListener('pointerleave', leave);
-            el.addEventListener('focus', enter);
-            el.addEventListener('blur', leave);
-            el.addEventListener('click', () => pin(ids[0]));
+            if (!EDIT_MODE) {
+              const enter = () => {
+                hovered = ids[0];
+                ensureItemVisible(ids[0]);
+                updateFocus();
+              };
+              const leave = () => {
+                hovered = null;
+                updateFocus();
+              };
+              el.addEventListener('pointerenter', enter);
+              el.addEventListener('pointerleave', leave);
+              el.addEventListener('focus', enter);
+              el.addEventListener('blur', leave);
+              el.addEventListener('click', () => pin(ids[0]));
+            }
 
             overlay.append(el);
-            boardHotspots.push({el, ids, side: side.side});
+            boardHotspots.push({el, ids, side: side.side, def, rect});
           });
         });
 
@@ -721,11 +755,184 @@
 
       // The sticky sidebar caps its height at min(component column, viewport).
       // The column height must be a real length (a percentage cannot resolve
-      // against the size-contained sidebar cell), so measure it.
-      new ResizeObserver(entries => {
-        const height = entries[entries.length - 1]?.contentRect.height;
-        if (height) host.style.setProperty('--fri3d-column-h', `${Math.round(height)}px`);
-      }).observe(main);
+      // against the size-contained sidebar cell), so measure it. Guarded:
+      // the editor rebuilds this section and must not stack observers.
+      if (!host.fri3dColumnObserved) {
+        host.fri3dColumnObserved = true;
+        new ResizeObserver(entries => {
+          const height = entries[entries.length - 1]?.contentRect.height;
+          if (height) host.style.setProperty('--fri3d-column-h', `${Math.round(height)}px`);
+        }).observe(main);
+      }
+
+      if (EDIT_MODE) enableHotspotEditor(section);
+    }
+
+    // Tear the physical section down and build it again from the (mutated)
+    // PHYSICAL_BOARDS data — used by the editor after structural changes.
+    function rebuildPhysicalBoard() {
+      const currentSide = boardFigures.find(figure => !figure.hidden)?.dataset.boardSide;
+      main.querySelector('.fri3d-physical')?.remove();
+      boardHotspots.length = 0;
+      boardFigures.length = 0;
+      boardToggleButtons.length = 0;
+      setupPhysicalBoard();
+      if (currentSide) showBoardSide(currentSide);
+    }
+
+    function enableHotspotEditor(section) {
+      const sides = PHYSICAL_BOARDS[diagram.id];
+      section.classList.add('is-editing');
+
+      const round1 = value => Math.round(value * 10) / 10;
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+      let editorSel = null;
+
+      const bar = document.createElement('div');
+      bar.className = 'fri3d-editor-bar';
+      bar.innerHTML = `
+        <strong>Hotspot editor</strong>
+        <span>drag = move · corner = resize · arrows = nudge (shift ×10) ·
+          double-click = label/match · Del = remove · red = no match</span>
+        <button type="button" data-editor-add>+ Block</button>
+        <button type="button" data-editor-copy>Copy config</button>
+      `;
+      section.prepend(bar);
+
+      const output = document.createElement('textarea');
+      output.className = 'fri3d-editor-output';
+      output.readOnly = true;
+      output.hidden = true;
+      output.rows = 14;
+      section.append(output);
+
+      const selectSpot = spot => {
+        editorSel = spot;
+        boardHotspots.forEach(other =>
+          other.el.classList.toggle('is-editor-selected', other === spot));
+      };
+
+      const applyRect = spot => {
+        const {rect, el} = spot;
+        rect.x = round1(rect.x); rect.y = round1(rect.y);
+        rect.w = round1(rect.w); rect.h = round1(rect.h);
+        el.style.left = `${rect.x}%`;
+        el.style.top = `${rect.y}%`;
+        el.style.width = `${rect.w}%`;
+        el.style.height = `${rect.h}%`;
+        el.querySelector('span').textContent =
+          `${spot.def.label} · x:${rect.x} y:${rect.y} w:${rect.w} h:${rect.h}`;
+      };
+
+      const removeSpot = spot => {
+        const side = sides.find(s => s.hotspots.includes(spot.def));
+        if (!side) return;
+        if (spot.def.rects) {
+          spot.def.rects.splice(spot.def.rects.indexOf(spot.rect), 1);
+          if (!spot.def.rects.length) side.hotspots.splice(side.hotspots.indexOf(spot.def), 1);
+        } else {
+          side.hotspots.splice(side.hotspots.indexOf(spot.def), 1);
+        }
+      };
+
+      const editLabels = spot => {
+        const label = prompt('Label:', spot.def.label);
+        if (label === null) return;
+        const match = prompt('Match substrings (comma separated, matched against component labels):',
+          spot.def.match.join(', '));
+        if (match === null) return;
+        spot.def.label = label.trim() || spot.def.label;
+        spot.def.match = match.split(',').map(s => s.trim()).filter(Boolean);
+        rebuildPhysicalBoard();
+      };
+
+      boardHotspots.forEach(spot => {
+        const el = spot.el;
+        const handle = document.createElement('i');
+        handle.className = 'fri3d-physical__handle';
+        el.append(handle);
+        applyRect(spot);
+
+        el.addEventListener('click', ev => ev.preventDefault());
+        el.addEventListener('dblclick', () => editLabels(spot));
+
+        el.addEventListener('pointerdown', ev => {
+          ev.preventDefault();
+          selectSpot(spot);
+          const overlayRect = el.parentElement.getBoundingClientRect();
+          const resizing = ev.target === handle;
+          const start = {
+            x: ev.clientX, y: ev.clientY,
+            rx: spot.rect.x, ry: spot.rect.y, rw: spot.rect.w, rh: spot.rect.h
+          };
+          const move = e => {
+            const dx = (e.clientX - start.x) / overlayRect.width * 100;
+            const dy = (e.clientY - start.y) / overlayRect.height * 100;
+            if (resizing) {
+              spot.rect.w = clamp(start.rw + dx, 1, 100 - spot.rect.x);
+              spot.rect.h = clamp(start.rh + dy, 1, 100 - spot.rect.y);
+            } else {
+              spot.rect.x = clamp(start.rx + dx, 0, 100 - spot.rect.w);
+              spot.rect.y = clamp(start.ry + dy, 0, 100 - spot.rect.h);
+            }
+            applyRect(spot);
+          };
+          window.addEventListener('pointermove', move);
+          window.addEventListener('pointerup', () =>
+            window.removeEventListener('pointermove', move), {once: true});
+        });
+      });
+
+      bar.querySelector('[data-editor-add]').addEventListener('click', () => {
+        const visibleSide = boardFigures.find(figure => !figure.hidden)?.dataset.boardSide;
+        const side = sides.find(s => s.side === visibleSide) || sides[0];
+        const label = prompt('Label for the new block:', 'New block');
+        if (label === null) return;
+        const match = prompt('Match substrings (comma separated, matched against component labels):', label);
+        if (match === null) return;
+        side.hotspots.push({
+          label: label.trim() || 'New block',
+          match: match.split(',').map(s => s.trim()).filter(Boolean),
+          x: 40, y: 40, w: 20, h: 12
+        });
+        rebuildPhysicalBoard();
+      });
+
+      bar.querySelector('[data-editor-copy]').addEventListener('click', async () => {
+        const snippet = serializeBoard(diagram.id);
+        output.value = snippet;
+        output.hidden = false;
+        console.log(snippet);
+        try {
+          await navigator.clipboard.writeText(snippet);
+        } catch (_) {}
+      });
+
+      document.addEventListener('keydown', ev => {
+        if (!editorSel || !section.isConnected) return;
+        if (ev.target.closest('textarea, input')) return;
+
+        if (ev.key === 'Delete' || ev.key === 'Backspace') {
+          ev.preventDefault();
+          removeSpot(editorSel);
+          rebuildPhysicalBoard();
+          return;
+        }
+
+        const step = ev.shiftKey ? 1 : 0.1;
+        const rect = editorSel.rect;
+        const nudge = {
+          ArrowLeft:  () => rect.x = clamp(rect.x - step, 0, 100 - rect.w),
+          ArrowRight: () => rect.x = clamp(rect.x + step, 0, 100 - rect.w),
+          ArrowUp:    () => rect.y = clamp(rect.y - step, 0, 100 - rect.h),
+          ArrowDown:  () => rect.y = clamp(rect.y + step, 0, 100 - rect.h)
+        }[ev.key];
+        if (nudge) {
+          ev.preventDefault();
+          nudge();
+          applyRect(editorSel);
+        }
+      });
     }
 
     function clearSelection() {

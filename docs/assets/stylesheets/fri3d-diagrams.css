@@ -1037,6 +1037,88 @@ html.fri3d-no-scroll {
   }
 }
 
+/* Hotspot editor (?fri3d-edit) */
+.fri3d-editor-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem .8rem;
+  padding: .55rem .8rem;
+  border-bottom: 1px solid var(--fd-border);
+  background: color-mix(in srgb, var(--fd-accent) 7%, var(--fd-surface));
+  font-size: .7rem;
+}
+
+.fri3d-editor-bar strong {
+  font-size: .78rem;
+}
+
+.fri3d-editor-bar span {
+  flex: 1 1 16rem;
+  opacity: .65;
+  line-height: 1.35;
+}
+
+.fri3d-editor-bar button {
+  padding: .35rem .7rem;
+  border: 1px solid var(--fd-border);
+  border-radius: .4rem;
+  background: var(--fd-surface);
+  color: inherit;
+  font: inherit;
+  font-size: .68rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.fri3d-editor-bar button:hover,
+.fri3d-editor-bar button:focus-visible {
+  border-color: var(--fd-accent);
+  outline: none;
+}
+
+.fri3d-editor-output {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: .7rem .8rem;
+  border: 0;
+  border-top: 1px solid var(--fd-border);
+  background: var(--fd-surface);
+  color: inherit;
+  font: .66rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  resize: vertical;
+}
+
+.fri3d-physical.is-editing .fri3d-physical__hotspot {
+  border: 1.5px dashed color-mix(in srgb, var(--fd-accent) 75%, transparent);
+  background: color-mix(in srgb, var(--fd-accent) 10%, transparent);
+  animation: none !important;
+  cursor: move;
+}
+
+.fri3d-physical.is-editing .fri3d-physical__hotspot.is-unmatched {
+  border-color: #e5484d;
+  background: rgb(229 72 77 / .14);
+}
+
+.fri3d-physical.is-editing .fri3d-physical__hotspot.is-editor-selected {
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--fd-accent), 0 0 14px color-mix(in srgb, var(--fd-accent) 70%, transparent);
+}
+
+.fri3d-physical__handle {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  background: var(--fd-accent);
+  cursor: nwse-resize;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fri3d-physical__hotspot:hover,
   .fri3d-physical__hotspot:focus-visible,

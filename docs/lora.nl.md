@@ -26,10 +26,14 @@ Vervolgens kan je de pinnen allemaal solderen. Let hier bij op dat je geen korts
 
 Vervolgens kan je de antenne monteren (tenzij je de uitbreiding voor de SMA connector hebt gekocht, dan kan je verder naar beneden scrollen)
 
+!!! warning "Antenne wordt heet tijdens het solderen"
+
+	De antenne wordt heet tijdens het solderen daar dit gewoon een stuk metaal is. Hier is het gebruik van een pincet of ander hulpmiddel zeer cruciaal om brandwonden te vermijden! Laat deze na het solderen voldoende afkoelen!
+
 ![Spriaalantenne](/badge_2026/assets/uploads/lora-lora-4.jpg)
 ![Spriaalantenne gemonteerd](/badge_2026/assets/uploads/lora-lora-5.jpg)
 
-Hier is het gebruik van een pincet zeer cruciaal daar de antenna behoorlijk warm kan worden tijden het solderen!
+
 
 ## Uitbreiding
 
@@ -41,7 +45,11 @@ Deze kit bevat een SMD SMA connector en een 5dBi Gain 868MHz antenne.
 
 ![SMA Connector](/badge_2026/assets/uploads/lora-lora-6.jpg)
 
-Bij het monteren van deze connector is, net zoals bij het monteren van de antenna, een hulpmiddel zoals een pincet nodig. Deze SMA connectoren worden heel warm tijdens het solderen. Hier is ook geduld belangrijk om een goede soldeer verbinding te bekomen. Het metaal dat je wil solderen op de PCB (in dit geval de SMA connector) moet warm genoeg zijn opdat het soldeersel zich er goed aan hecht.
+!!! warning "SMA connector wordt heet tijdens het solderen"
+
+	Net zoals de antenne, wordt ook de SMA connector heet tijdens het solderen. Gebruik een pincet of ander hulpmiddel om brandwonden te voorkomen! Laat de connector voldoende afkoelen na het solderen!
+	
+Geduld is belangrijk bij het monteren van deze connector om een goede soldeer verbinding te bekomen. Het metaal dat je wil solderen op de PCB (in dit geval de SMA connector) moet warm genoeg zijn opdat het soldeersel zich er goed aan hecht.
 
 ![SMA Connector soldered front](/badge_2026/assets/uploads/lora-lora-7.jpg)
 ![SMA Connector soldered back](/badge_2026/assets/uploads/lora-lora-8.jpg)

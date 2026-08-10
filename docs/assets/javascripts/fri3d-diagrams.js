@@ -28,6 +28,10 @@
       resizeSidebar: 'Resize component sidebar',
       loading: 'Loading interactive diagram…',
       loadError: 'Could not load the interactive diagram.',
+      physicalBoard: 'Physical board',
+      boardSide: 'Board side',
+      boardFront: 'Front',
+      boardBack: 'Back',
       groups: {
         i2c: 'I²C',
         i2s: 'I²S / audio',
@@ -58,6 +62,10 @@
       resizeSidebar: 'Zijbalk vergroten of verkleinen',
       loading: 'Interactief diagram laden…',
       loadError: 'Het interactieve diagram kon niet worden geladen.',
+      physicalBoard: 'Fysiek bord',
+      boardSide: 'Bordzijde',
+      boardFront: 'Voorkant',
+      boardBack: 'Achterkant',
       groups: {
         i2c: 'I²C',
         i2s: 'I²S / audio',
@@ -69,9 +77,134 @@
     }
   };
 
+  /*
+   * Photo renders of the actual PCBs, shown as part of the same interactive
+   * component. Hotspot x/y/w/h are percentages of the image. `match` entries
+   * are case-insensitive substrings of node labels in the diagram data; a
+   * hotspot is dropped when nothing in the current diagram matches it.
+   */
+  const PHYSICAL_BOARDS = {
+    badge: [
+      {
+        side: 'front',
+        image: 'assets/images/badge-front.png',
+        hotspots: [
+          {label:'LCD / touch', match:['ST7789v','Backlight','Touch'], x:26.8,y:4.0,w:46.5,h:67.0},
+          {label:'IR receiver', match:['IR Receiver'], x:20.8,y:15.6,w:5.0,h:11.0},
+          {label:'WS2812 NeoPixels', match:['WS2812'], x:30.2,y:70.5,w:38.7,h:13.0},
+          {label:'Menu', match:['Menu Button'], x:36.2,y:80.0,w:5.8,h:11.0},
+          {label:'Start', match:['Start Button'], x:58.0,y:80.0,w:6.1,h:11.0},
+          {label:'Joystick', match:['Joystick'], x:82.6,y:27.6,w:9.2,h:13.0},
+          {label:'X', match:['X Button'], x:84.3,y:58.8,w:7.5,h:12.5},
+          {label:'Y', match:['Y Button'], x:76.0,y:44.5,w:7.6,h:12.7},
+          {label:'A', match:['A Button'], x:91.6,y:44.2,w:7.0,h:12.7},
+          {label:'B', match:['B Button'], x:84.3,y:63.3,w:7.6,h:12.5}
+        ]
+      },
+      {
+        side: 'back',
+        image: 'assets/images/badge-back.png',
+        hotspots: [
+          {label:'ESP32-S3', match:['ESP32-S3 based'], x:42.0,y:5.0,w:16.2,h:46.0},
+          {label:'USB-C', match:['USB C'], x:23.5,y:2.1,w:8.7,h:16.4},
+          {label:'Reset', match:['Reset Button'], x:8.6,y:51.0,w:5.2,h:13.7},
+          {label:'MicroSD', match:['MicroSD Card'], x:26.4,y:64.0,w:14.2,h:29.7},
+          {label:'CH32X035', match:['WCH CH32X035'], x:64.3,y:31.3,w:7.4,h:13.5},
+          {label:'Accelerometer', match:['Accelerometer'], x:86.9,y:38.3,w:6.5,h:13.5},
+          {label:'Buzzer', match:['Buzzer'], x:44.2,y:55.1,w:11.3,h:23.0},
+          {label:'Expansion', match:['Expansion Connector'], x:43.7,y:78.0,w:13.6,h:13.5},
+          {label:'Power switch', match:['Power Switch'], x:72.1,y:87.2,w:5.1,h:10.4},
+          {label:'LoRa', match:['LoRa Module'], x:3.8,y:21.0,w:11.2,h:27.0},
+          {label:'SAO', match:['SAO v1.69 Bis'], x:85.8,y:4.5,w:8.6,h:16.0},
+          {label:'Debug LED', match:['Debug LED'], x:93.4,y:55.5,w:6.3,h:17.0},
+          {label:'Multimeter', match:['Multimeter'], x:89.8,y:71.5,w:7.8,h:23.0},
+          {label:'STEMMA QT', match:['Stemma QT connector'], x:93.4,y:24.3,w:5.6,h:13.8},
+          {label:'Headset', match:['Headset TRRS Connector'], x:80.7,y:1.0,w:5.6,h:21.5},
+          {label:'I²S DAC', match:['I2S DAC'], x:70.0,y:66.0,w:8.2,h:13.0},
+          {label:'Mic amplifier', match:['Microphone Amplifier','Microphone'], x:75.2,y:63.0,w:5.8,h:13.0},
+          {label:'Battery charger', match:['Battery Charger'], x:20.0,y:31.0,w:5.8,h:8.5},
+          {label:'3.3V rails', match:['3.3V Power rails'], x:33.2,y:19.0,w:8.7,h:13.5},
+          {label:'Badge Link', match:['Badge Link'], x:0.8,y:68.0,w:6.4,h:24.0}
+        ]
+      }
+    ],
+
+    dj: [
+      {
+        side: 'front',
+        image: 'assets/images/dj-front.png',
+        hotspots: [
+          {label:'USB-C', match:['USB C'], x:75.3,y:3,w:7.0,h:12},
+          {label:'CH32X035', match:['CH32X035'], x:59.5,y:9.0,w:6.5,h:8.5},
+          {label:'Badge expansion connector', match:['Expansion Connector'], x:46.3,y:9.0,w:9.2,h:8.5},
+          {label:'Encoder input', match:['2Ch encoder input'], rects:[
+            {x:10,y:4.0,w:8.0,h:20.0},
+            {x:83.0,y:4.0,w:8.0,h:20.0}
+          ]},
+
+          {label:'Potentiometer', match:['6 x Potentiometers'], rects:[
+            {x:5.6,y:17.0,w:8.2,h:16.0},
+            {x:5.6,y:40.0,w:8.2,h:16.0},
+            {x:5.6,y:60.0,w:8.2,h:16.5},
+            {x:88.6,y:17.0,w:8.2,h:16.0},
+            {x:88.6,y:40.0,w:8.2,h:16.0},
+            {x:88.6,y:60.0,w:8.2,h:16.5}
+          ]},
+
+          {label:'Slider', match:['3 x Sliders'], rects:[
+            {x:16.3,y:22.0,w:6.0,h:55.0},
+            {x:79.0,y:22.0,w:6.0,h:55.0},
+            {x:37.5,y:79.5,w:26.5,h:8.5}
+          ]},
+
+          {label:'Silicone keypad', match:['Silicone keypad'], rects:[
+            {x:24.2,y:26.5,w:9.5,h:17.5},
+            {x:38.8,y:26.5,w:9.5,h:17.5},
+            {x:53.2,y:26.5,w:9.5,h:17.5},
+            {x:67.4,y:26.5,w:9.5,h:17.5},
+            {x:24.2,y:55.0,w:9.5,h:17.5},
+            {x:38.8,y:55.0,w:9.5,h:17.5},
+            {x:53.2,y:55.0,w:9.5,h:17.5},
+            {x:67.4,y:55.0,w:9.5,h:17.5}
+          ]},
+
+          /* Small LED centers sit on top of the keypad pads (DOM order). */
+          {label:'WS2812 RGB LED', match:['WS2812C RGB LEDs'], rects:[
+            {x:27.2,y:31.5,w:3.6,h:7.5},
+            {x:41.8,y:31.5,w:3.6,h:7.5},
+            {x:56.2,y:31.5,w:3.6,h:7.5},
+            {x:70.4,y:31.5,w:3.6,h:7.5},
+            {x:27.2,y:60.0,w:3.6,h:7.5},
+            {x:41.8,y:60.0,w:3.6,h:7.5},
+            {x:56.2,y:60.0,w:3.6,h:7.5},
+            {x:70.4,y:60.0,w:3.6,h:7.5}
+          ]}
+        ]
+      }
+    ],
+
+    communicator: [
+      {
+        side: 'front',
+        image: 'assets/images/communicator-front.png',
+        hotspots: [
+          {label:'USB-C', match:['USB C'], x:72.0,y:3.0,w:10.0,h:7.5},
+          {label:'CH32X035', match:['CH32X035'], x:74.0,y:17.5,w:6.5,h:5.5},
+          {label:'Badge expansion connector', match:['Expansion Connector'], x:42.5,y:44.3,w:15.5,h:6.2},
+          /* U1 amp cluster plus the P2 speaker connector it drives. */
+          {label:'MAX98357A DAC + amp', match:['MAX98357A'], x:22.5,y:34.0,w:10.0,h:8.0},
+          {label:'Microphone', match:['SPH0645','Microphone'], x:10.3,y:36.5,w:5.5,h:6.0},
+          {label:'KeebDeck', match:['KeebDeck'], x:9.0,y:49.5,w:83.0,h:47.5}
+        ]
+      }
+    ]
+  };
+
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => (
     {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]
   ));
+
+  const normalize = value => String(value ?? '').replace(/\s+/g, ' ').trim().toLowerCase();
 
   const slugify = value => String(value)
     .split('\n')[0]
@@ -197,7 +330,13 @@
       </div>
     `;
 
-    shell.append(stage, resizer, sidebar);
+    // Left column: diagram stage with the physical board (when available)
+    // below it, so the sidebar can span the full component height.
+    const main = document.createElement('div');
+    main.className = 'fri3d-diagram__main';
+    main.append(stage);
+
+    shell.append(main, resizer, sidebar);
     host.replaceChildren(shell);
 
     const realNodes = [...svg.querySelectorAll('[data-fri3d-node-id]')];
@@ -218,10 +357,18 @@
     const base = {x: originalViewBox[0], y: originalViewBox[1], w: originalViewBox[2], h: originalViewBox[3]};
     const view = {...base};
 
+    // The stage follows the diagram's real aspect ratio (used by the layout
+    // with the physical board below), so no letterbox gap appears between
+    // the diagram and the board.
+    stage.style.setProperty('--fri3d-stage-aspect', `${base.w} / ${base.h}`);
+
     let pan = null;
     let hovered = null;
     let previewed = null;
     let selected = null;
+    const boardHotspots = [];
+    const boardFigures = [];
+    const boardToggleButtons = [];
     const pointers = new Map();
     const MIN_ZOOM = 1;
     const MAX_ZOOM = 10;
@@ -297,6 +444,11 @@
         item.classList.toggle('is-active', !!hovered && id === hovered);
         item.classList.toggle('is-selected', !!selected && id === selected);
         item.setAttribute('aria-current', selected === id ? 'true' : 'false');
+      });
+
+      boardHotspots.forEach(spot => {
+        spot.el.classList.toggle('is-active', !!focus && spot.ids.includes(focus));
+        spot.el.classList.toggle('is-selected', !!selected && spot.ids.includes(selected));
       });
     }
 
@@ -442,7 +594,125 @@
       tooltip.hidden = true;
       renderDetails(id);
       ensureItemVisible(id);
+      revealOnBoard(id);
       if (updateHash) setHashFor(node);
+    }
+
+    function showBoardSide(side) {
+      boardFigures.forEach(figure => {
+        figure.hidden = figure.dataset.boardSide !== side;
+      });
+      boardToggleButtons.forEach(button => {
+        const active = button.dataset.boardSide === side;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+    }
+
+    // If the pinned component only exists on the board side that is currently
+    // hidden, flip to that side so the highlight is actually visible.
+    function revealOnBoard(id) {
+      const spots = boardHotspots.filter(spot => spot.ids.includes(id));
+      if (!spots.length) return;
+      const visibleSide = boardFigures.find(figure => !figure.hidden)?.dataset.boardSide;
+      if (spots.some(spot => spot.side === visibleSide)) return;
+      showBoardSide(spots[0].side);
+    }
+
+    function setupPhysicalBoard() {
+      const sides = PHYSICAL_BOARDS[diagram.id];
+      if (!sides?.length) return;
+
+      const matchIds = needles => {
+        const ids = new Set();
+        needles.map(normalize).filter(Boolean).forEach(needle => {
+          diagram.nodes.forEach(node => {
+            if (normalize(node.label).includes(needle)) ids.add(node.id);
+          });
+        });
+        return [...ids];
+      };
+
+      const sideLabel = side => side === 'back' ? t.boardBack : t.boardFront;
+
+      const section = document.createElement('section');
+      section.className = 'fri3d-physical';
+      section.setAttribute('aria-label', t.physicalBoard);
+      section.innerHTML = `
+        <div class="fri3d-physical__stage">
+          ${sides.length > 1 ? `
+            <div class="fri3d-physical__toggle" role="group" aria-label="${esc(t.boardSide)}">
+              ${sides.map((side, index) => `
+                <button type="button" data-board-side="${esc(side.side)}"
+                  class="${index === 0 ? 'is-active' : ''}"
+                  aria-pressed="${index === 0}">${esc(sideLabel(side.side))}</button>
+              `).join('')}
+            </div>` : ''}
+        </div>
+      `;
+
+      const boardStage = section.querySelector('.fri3d-physical__stage');
+
+      sides.forEach((side, index) => {
+        const figure = document.createElement('figure');
+        figure.className = 'fri3d-physical__board';
+        figure.dataset.boardSide = side.side;
+        figure.hidden = index > 0;
+        figure.innerHTML = `
+          <img src="${esc(new URL(side.image, ASSET_BASE).href)}"
+            alt="${esc(`${sideLabel(side.side)} — ${t.physicalBoard}`)}"
+            loading="lazy" decoding="async">
+          <div class="fri3d-physical__overlay"></div>
+        `;
+
+        const overlay = figure.querySelector('.fri3d-physical__overlay');
+        side.hotspots.forEach(def => {
+          const ids = matchIds(def.match);
+          if (!ids.length) return;
+
+          // A definition covers one rectangle (x/y/w/h) or several (`rects`),
+          // e.g. six potentiometers that are one component in the diagram.
+          // All regions of a definition highlight together.
+          const rects = def.rects || [def];
+          rects.forEach(rect => {
+            const el = document.createElement('button');
+            el.type = 'button';
+            el.className = 'fri3d-physical__hotspot';
+            el.style.cssText = `left:${rect.x}%;top:${rect.y}%;width:${rect.w}%;height:${rect.h}%`;
+            el.setAttribute('aria-label', def.label);
+            el.innerHTML = `<span>${esc(def.label)}</span>`;
+
+            const enter = () => {
+              hovered = ids[0];
+              ensureItemVisible(ids[0]);
+              updateFocus();
+            };
+            const leave = () => {
+              hovered = null;
+              updateFocus();
+            };
+            el.addEventListener('pointerenter', enter);
+            el.addEventListener('pointerleave', leave);
+            el.addEventListener('focus', enter);
+            el.addEventListener('blur', leave);
+            el.addEventListener('click', () => pin(ids[0]));
+
+            overlay.append(el);
+            boardHotspots.push({el, ids, side: side.side});
+          });
+        });
+
+        boardStage.append(figure);
+        boardFigures.push(figure);
+      });
+
+      section.querySelectorAll('.fri3d-physical__toggle button').forEach(button => {
+        button.addEventListener('click', () => showBoardSide(button.dataset.boardSide));
+        boardToggleButtons.push(button);
+      });
+
+      host.classList.add('fri3d-diagram--has-physical');
+      main.append(section);
     }
 
     function clearSelection() {
@@ -687,6 +957,8 @@
         clearSelection();
       }
     });
+
+    setupPhysicalBoard();
 
     const requestedSlug = location.hash.replace(/^#component-/, '');
     if (requestedSlug && location.hash.startsWith('#component-')) {

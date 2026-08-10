@@ -761,3 +761,269 @@ html.fri3d-no-scroll {
 .fri3d-connections li {
   display: none !important;
 }
+
+
+/* v24 — physical board inside the shell: sidebar spans the full component
+   height and sticks while scrolling; front/back switch floats over the board. */
+.fri3d-diagram__main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* With a board below the diagram the shell grows with its content. The page
+   scrolls past it while the sidebar sticks — sticky needs a non-clipping
+   shell, so overflow:hidden goes and the corner rounding moves to children. */
+.fri3d-diagram--has-physical .fri3d-diagram__shell {
+  height: auto;
+  overflow: visible;
+}
+
+.fri3d-diagram--has-physical .fri3d-diagram__stage {
+  flex: 0 0 auto;
+  height: auto;
+  aspect-ratio: var(--fri3d-stage-aspect, 3 / 2);
+  min-height: 320px;
+  max-height: min(76vh, 700px);
+  border-radius: .75rem 0 0 0;
+}
+
+.fri3d-diagram--has-physical .fri3d-index {
+  position: sticky;
+  top: 2.9rem; /* just below the sticky Material header */
+  align-self: start;
+  height: calc(100vh - 3.5rem);
+  max-height: 100%;
+  border-radius: 0 .75rem .75rem 0;
+}
+
+.fri3d-physical {
+  border-top: 1px solid var(--fd-border);
+  background: var(--fd-surface);
+  border-radius: 0 0 0 .75rem;
+}
+
+/* (Pseudo) fullscreen shows only the diagram: board hidden, stage refills. */
+.fri3d-diagram--has-physical .fri3d-diagram__shell:fullscreen,
+.fri3d-diagram--has-physical .fri3d-diagram__shell.is-pseudo-fullscreen {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fri3d-diagram__shell:fullscreen .fri3d-physical,
+.fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-physical {
+  display: none;
+}
+
+.fri3d-diagram__shell:fullscreen .fri3d-diagram__stage,
+.fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-diagram__stage {
+  flex: 1 1 auto;
+  height: 100%;
+  aspect-ratio: auto;
+  max-height: none;
+  border-radius: 0;
+}
+
+.fri3d-diagram__shell:fullscreen .fri3d-index,
+.fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-index {
+  position: static;
+  height: 100%;
+  max-height: none;
+}
+
+.fri3d-physical__toggle {
+  position: absolute;
+  z-index: 6;
+  top: .7rem;
+  left: .7rem;
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--fd-border);
+  border-radius: .55rem;
+  background: color-mix(in srgb, var(--fd-surface) 94%, transparent);
+  box-shadow: 0 3px 14px rgb(0 0 0 / .12);
+  backdrop-filter: blur(10px);
+}
+
+.fri3d-physical__toggle button {
+  padding: .34rem .85rem;
+  border: 0;
+  border-radius: .4rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .68rem;
+  font-weight: 650;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.fri3d-physical__toggle button:hover,
+.fri3d-physical__toggle button:focus-visible {
+  background: color-mix(in srgb, currentColor 9%, transparent);
+  outline: none;
+}
+
+.fri3d-physical__toggle button.is-active {
+  background: color-mix(in srgb, var(--fd-accent) 16%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--fd-accent) 45%, transparent);
+}
+
+.fri3d-physical__stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: .9rem;
+}
+
+.fri3d-physical__board {
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+}
+
+.fri3d-physical__board[hidden] {
+  display: none;
+}
+
+.fri3d-physical__board img {
+  display: block;
+  max-width: 100%;
+  max-height: 520px;
+  width: auto;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+.fri3d-physical__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.fri3d-physical__hotspot {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: .45rem;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
+}
+
+.fri3d-physical__hotspot > span {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  width: max-content;
+  max-width: 180px;
+  padding: .28rem .4rem;
+  border-radius: .35rem;
+  background: #111;
+  color: #fff;
+  font: 650 .62rem/1.25 system-ui, sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 3px);
+  transition: opacity .1s ease, transform .1s ease;
+}
+
+/* Highlights sit on top of a photo, so contrast comes from a white inner
+   ring against the accent ring, plus a pulsing glow. */
+.fri3d-physical__hotspot:hover,
+.fri3d-physical__hotspot:focus-visible,
+.fri3d-physical__hotspot.is-active {
+  border-color: #fff;
+  background: color-mix(in srgb, var(--fd-accent) 30%, transparent);
+  animation: fri3d-hotspot-pulse 1.2s ease-in-out infinite;
+  outline: none;
+}
+
+.fri3d-physical__hotspot.is-selected {
+  border-color: #fff;
+  background: color-mix(in srgb, var(--fd-accent) 42%, transparent);
+  animation: fri3d-hotspot-pulse-selected 1.2s ease-in-out infinite;
+}
+
+@keyframes fri3d-hotspot-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 2px var(--fd-accent),
+      0 0 0 4px rgb(255 255 255 / .55),
+      0 0 10px 2px color-mix(in srgb, var(--fd-accent) 85%, transparent);
+  }
+  50% {
+    box-shadow:
+      0 0 0 3px var(--fd-accent),
+      0 0 0 6px rgb(255 255 255 / .28),
+      0 0 26px 9px color-mix(in srgb, var(--fd-accent) 95%, transparent);
+  }
+}
+
+@keyframes fri3d-hotspot-pulse-selected {
+  0%, 100% {
+    box-shadow:
+      0 0 0 3px var(--fd-accent),
+      0 0 0 5px rgb(255 255 255 / .7),
+      0 0 14px 4px var(--fd-accent);
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px var(--fd-accent),
+      0 0 0 8px rgb(255 255 255 / .35),
+      0 0 34px 12px var(--fd-accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fri3d-physical__hotspot:hover,
+  .fri3d-physical__hotspot:focus-visible,
+  .fri3d-physical__hotspot.is-active,
+  .fri3d-physical__hotspot.is-selected {
+    animation: none;
+    box-shadow:
+      0 0 0 3px var(--fd-accent),
+      0 0 0 5px rgb(255 255 255 / .6),
+      0 0 18px 5px color-mix(in srgb, var(--fd-accent) 90%, transparent);
+  }
+}
+
+.fri3d-physical__hotspot:hover > span,
+.fri3d-physical__hotspot:focus-visible > span {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 760px) {
+  .fri3d-diagram--has-physical .fri3d-diagram__shell {
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+
+  .fri3d-diagram--has-physical .fri3d-diagram__stage {
+    height: auto;
+    min-height: 240px;
+    max-height: min(64vh, 520px);
+    border-radius: .75rem .75rem 0 0;
+  }
+
+  .fri3d-diagram--has-physical .fri3d-index {
+    position: static;
+    align-self: stretch;
+    height: auto;
+    max-height: 45vh;
+    border-radius: 0 0 .75rem .75rem;
+  }
+
+  .fri3d-physical {
+    border-radius: 0;
+  }
+
+  .fri3d-physical__stage {
+    padding: .6rem;
+  }
+}

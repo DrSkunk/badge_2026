@@ -194,4 +194,4 @@ flashen. Je kunt ook
 - [Standaardbesturingssysteem](https://github.com/Fri3dCamp/badge_firmware_MicroPythonOS)
 - [MicroPythonOS documentation](https://docs.micropythonos.com/)
 - [Fri3d IDE](https://fri3dcamp.github.io/Fri3d-IDE/)
-- [Schrijf mee aan deze documentatie](https://fri3dcamp.github.io/badge_2026/contribute/]
+- [Schrijf mee aan deze documentatie](https://fri3dcamp.github.io/badge_2026/contribute/)

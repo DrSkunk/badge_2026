@@ -804,24 +804,31 @@ html.fri3d-no-scroll {
   border-radius: 0 0 0 .75rem;
 }
 
-/* (Pseudo) fullscreen shows only the diagram: board hidden, stage refills. */
+/* (Pseudo) fullscreen keeps the whole component — diagram, board, sidebar.
+   The left column scrolls when diagram + board exceed the screen height. */
 .fri3d-diagram--has-physical .fri3d-diagram__shell:fullscreen,
 .fri3d-diagram--has-physical .fri3d-diagram__shell.is-pseudo-fullscreen {
   height: 100vh;
   overflow: hidden;
 }
 
-.fri3d-diagram__shell:fullscreen .fri3d-physical,
-.fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-physical {
-  display: none;
+.fri3d-diagram__shell:fullscreen .fri3d-diagram__main,
+.fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-diagram__main {
+  min-height: 0;
+  overflow-y: auto;
 }
 
-.fri3d-diagram__shell:fullscreen .fri3d-diagram__stage,
-.fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-diagram__stage {
+.fri3d-diagram--has-physical .fri3d-diagram__shell:fullscreen .fri3d-diagram__stage,
+.fri3d-diagram--has-physical .fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-diagram__stage {
+  max-height: 80vh;
+  border-radius: 0;
+}
+
+/* Diagrams without a board keep the stage filling the screen. */
+.fri3d-diagram:not(.fri3d-diagram--has-physical) .fri3d-diagram__shell:fullscreen .fri3d-diagram__stage,
+.fri3d-diagram:not(.fri3d-diagram--has-physical) .fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-diagram__stage {
   flex: 1 1 auto;
   height: 100%;
-  aspect-ratio: auto;
-  max-height: none;
   border-radius: 0;
 }
 

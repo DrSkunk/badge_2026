@@ -95,10 +95,10 @@
           {label:'Menu', match:['Menu Button'], x:36.2,y:80.0,w:5.8,h:11.0},
           {label:'Start', match:['Start Button'], x:58.0,y:80.0,w:6.1,h:11.0},
           {label:'Joystick', match:['Joystick'], x:8.0,y:34.0,w:14.4,h:30},
-          {label:'X', match:['X Button'], x:84.3,y:58.8,w:7.5,h:12.5},
+          {label:'X', match:['X Button'], x:84.0,y:28.4,w:7.5,h:12.5},
           {label:'Y', match:['Y Button'], x:76.0,y:44.5,w:7.6,h:12.7},
           {label:'A', match:['A Button'], x:91.6,y:44.2,w:7.0,h:12.7},
-          {label:'B', match:['B Button'], x:84.3,y:63.3,w:7.6,h:12.5}
+          {label:'B', match:['B Button'], x:84.0,y:63.3,w:7.6,h:12.5}
         ]
       },
       {

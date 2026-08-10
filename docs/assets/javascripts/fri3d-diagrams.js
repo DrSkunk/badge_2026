@@ -135,11 +135,14 @@
         image: 'assets/images/dj-front.png',
         hotspots: [
           {label:'USB-C', match:['USB C'], x:75.3,y:3,w:7.0,h:12},
-          {label:'CH32X035', match:['CH32X035'], x:59.5,y:9.0,w:6.5,h:8.5},
+          {label:'CH32X035', match:['CH32X035'], x:71.5,y:12.4,w:4.5,h:9},
           {label:'Badge expansion connector', match:['Expansion Connector'], x:46.3,y:9.0,w:9.2,h:8.5},
+          /* T1 / D9 / C5 / U2 / C6 regulator block left of P1. */
+          {label:'3.3V power rail', match:['3.3V Power rail'], x:36.3,y:9.0,w:9.2,h:8.5},
           {label:'Encoder input', match:['2Ch encoder input'], rects:[
             {x:10,y:4.0,w:8.0,h:20.0},
-            {x:83.0,y:4.0,w:8.0,h:20.0}
+            {x:83.0,y:4.0,w:8.0,h:20.0},
+            {x:59,y:9.0,w:6.5,h:8.5}
           ]},
 
           {label:'Potentiometer', match:['6 x Potentiometers'], rects:[

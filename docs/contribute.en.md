@@ -31,7 +31,7 @@ On the overview page, click the black **+Page** button. This opens a new screen 
 
 By default, you will see a split view. The text in **Dutch** is shown on the left, and the text in **English** on the right. We prefer to have the text available in both languages.
 
-The content of the **Title** field is automatically added to the table of contents on the left-hand side of the documentation website.
+The content of the **Title** field becomes the title of the page, and also the name the page gets in the menu on the left-hand side. A new page does not appear in that menu automatically: you add it yourself, see [Editing the menu](#editing-the-menu).
 
 On the right-hand side of this screen, there are several buttons for adjusting the view.
 
@@ -51,6 +51,24 @@ On the overview page, click the page you want to edit. You will then see the sam
 
 Make the changes you want in Dutch and English, then click **Save**.
 
+## Editing the menu
+
+The menu on the left-hand side of the documentation website (the order of the pages and the sections such as **Hardware** and **Software**) is also edited in the admin screen.
+
+In the left bar of the admin screen, click **Menu** and open **Website menu (left sidebar)**.
+
+![Menu collection in the admin screen](/badge_2026/assets/uploads/docs_menu.png)
+
+You now see the list of menu items:
+
+- **Changing the order:** drag an item to the desired position.
+- **Adding a page:** click **Add menu item** and choose **Page**. Then pick the page from the list. You can leave the title fields empty: the page's own title will be used. Only fill them in when the menu should show a different (for example shorter) name.
+- **Adding a section:** choose **Section** under **Add menu item**. Give the section a Dutch (and optionally English) title and add pages to it.
+
+![Editing a menu item](/badge_2026/assets/uploads/docs_menu_item.png)
+
+Then click **Save**. Just like pages, menu changes do not go online immediately: they are reviewed first.
+
 ## What happens to your changes?
 
 When you are finished, it is best to send a message in the [Badge 2026 channel on Discord](https://discord.com/channels/929462354415087736/1437876462874267740) or speak to a Fri3d Camp staff member. They can then review your edits and publish them on the website.
@@ -59,11 +77,8 @@ When you are finished, it is best to send a message in the [Badge 2026 channel o
 
 That works too! You can always contribute directly through [GitHub](https://github.com/Fri3dCamp/badge_2026): fork the repository, edit the Markdown files in the `docs/` folder, and open a Pull Request. The [README](https://github.com/Fri3dCamp/badge_2026/blob/main/README.md) contains all the information you need.
 
-### Adding a page to the menu
+### Editing the menu through GitHub
 
-You can change the menu on the left in two ways:
-
-- **Through the CMS:** open the **Menu** collection in the admin screen. There you can drag items to reorder them, pick pages from a list, and set a Dutch and English title per item.
-- **Through GitHub:** the menu lives in [`nav.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/nav.yml) in the repository root. Each item refers to the file name **without** the language suffix (so `my-page`, not `my-page.nl`). The menu order is simply the order in the file.
+The menu lives in [`nav.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/nav.yml) in the repository root (the same file the **Menu** collection in the admin screen edits). Each item refers to the file name **without** the language suffix (so `my-page`, not `my-page.nl`). The menu order is simply the order in the file; menu titles come from the page titles, unless you override them per item with `title_nl`/`title_en`.
 
 Thank you again for helping! 💚

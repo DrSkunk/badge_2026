@@ -31,7 +31,7 @@ Klik op de overzichtspagina op de zwarte knop **+Page**. Dit opent een nieuw sch
 
 Je krijgt standaard een gespleten view. Links de tekst in het **Nederlands** en rechts de tekst in het **Engels**. Liefst hebben we de teksten in beide talen.
 
-Wat er in het veld **Title** staat wordt automatisch toegevoegd aan de inhoudsopgave aan de linkerkant van de documentatiewebsite.
+Wat er in het veld **Title** staat wordt de titel van de pagina, en ook de naam waarmee de pagina in het menu aan de linkerkant verschijnt. Een nieuwe pagina staat niet automatisch in dat menu: die voeg je zelf toe, zie [Het menu aanpassen](#het-menu-aanpassen).
 
 Aan de rechterkant in dit scherm heb je een paar knoppen om het beeld aan te passen.
 
@@ -53,6 +53,24 @@ Wijzig wat je wilt in het Nederlands en het Engels. Druk daarna op **Save**.
 
 **Opgelet, als je afbeeldingen toevoegt of wijzigt worden ze op dit moment niet getoond in de preview. Dit is een probleem dat onze provider moet oplossen.**
 
+## Het menu aanpassen
+
+Het menu aan de linkerkant van de documentatiewebsite (de volgorde van de pagina's en de secties zoals **Hardware** en **Software**) pas je ook aan in het beheerscherm.
+
+Klik in de linkerbalk van het beheerscherm op **Menu** en open **Website menu (left sidebar)**.
+
+![Menu-collectie in het beheerscherm](/badge_2026/assets/uploads/docs_menu.png)
+
+Je ziet nu de lijst met menu-items:
+
+- **Volgorde wijzigen:** versleep een item naar de gewenste plaats.
+- **Pagina toevoegen:** klik op **Add menu item** en kies **Page**. Kies daarna de pagina uit de lijst. De titelvelden mag je leeg laten: dan wordt de titel van de pagina zelf gebruikt. Vul ze enkel in als het menu een andere (bijvoorbeeld kortere) naam moet tonen.
+- **Sectie toevoegen:** kies bij **Add menu item** voor **Section**. Geef de sectie een Nederlandse (en eventueel Engelse) titel en voeg er pagina's aan toe.
+
+![Een menu-item bewerken](/badge_2026/assets/uploads/docs_menu_item.png)
+
+Klik daarna op **Save**. Net zoals bij pagina's komen menuwijzigingen niet meteen online: ze worden eerst nagekeken.
+
 ## Wat gebeurt er met je wijzigingen?
 
 Wanneer je klaar bent stuur je best een berichtje op het [Badge 2026 kanaal op Discord](https://discord.com/channels/929462354415087736/1437876462874267740) of spreek je een Fri3d Camp medewerker aan. Zij kunnen dan je bewerkingen nakijken en publiceren op de website.
@@ -61,11 +79,8 @@ Wanneer je klaar bent stuur je best een berichtje op het [Badge 2026 kanaal op D
 
 Ook goed! Je kan altijd rechtstreeks bijdragen via [GitHub](https://github.com/Fri3dCamp/badge_2026): fork de repository, pas de Markdown-bestanden in de map `docs/` aan en open een Pull Request. In de [README](https://github.com/Fri3dCamp/badge_2026/blob/main/README.md) vind je alle info die je nodig hebt.
 
-### Een pagina toevoegen aan het menu
+### Het menu aanpassen via GitHub
 
-Het menu aan de linkerkant kan je op twee manieren aanpassen:
-
-- **Via het CMS:** open de collectie **Menu** in het beheerscherm. Daar kan je items verslepen om de volgorde te wijzigen, pagina's kiezen uit een lijst en per item een Nederlandse en Engelse titel invullen.
-- **Via GitHub:** het menu staat in [`nav.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/nav.yml) in de root van de repository. Elk item verwijst naar de bestandsnaam **zonder** taalsuffix (dus `mijn-pagina`, niet `mijn-pagina.nl`). De volgorde van het menu is gewoon de volgorde in het bestand.
+Het menu staat in [`nav.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/nav.yml) in de root van de repository (hetzelfde bestand dat de **Menu**-collectie in het beheerscherm bewerkt). Elk item verwijst naar de bestandsnaam **zonder** taalsuffix (dus `mijn-pagina`, niet `mijn-pagina.nl`). De volgorde van het menu is gewoon de volgorde in het bestand; menutitels komen uit de paginatitels, tenzij je ze per item overschrijft met `title_nl`/`title_en`.
 
 Nogmaals bedankt om mee te helpen! 💚

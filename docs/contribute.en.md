@@ -59,4 +59,8 @@ When you are finished, it is best to send a message in the [Badge 2026 channel o
 
 That works too! You can always contribute directly through [GitHub](https://github.com/Fri3dCamp/badge_2026): fork the repository, edit the Markdown files in the `docs/` folder, and open a Pull Request. The [README](https://github.com/Fri3dCamp/badge_2026/blob/main/README.md) contains all the information you need.
 
+### Adding a page to the menu
+
+The menu on the left is defined by the `nav:` block in [`mkdocs.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/mkdocs.yml). When you create a new page, add one line in the right place in that block, using the Dutch title and the file name **without** the language suffix (so `my-page.md`, not `my-page.nl.md`). Add the English title under `nav_translations` in the same file. The menu order is simply the order of the lines.
+
 Thank you again for helping! 💚

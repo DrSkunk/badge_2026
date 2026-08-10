@@ -2,6 +2,13 @@
   command = "mkdocs build -d site/badge_2026 && printf '<meta http-equiv=\"refresh\" content=\"0;url=/badge_2026/\">' > site/index.html"
   publish = "site"
 
+# On deploy previews, point the CMS at the PR's own branch instead of main,
+# so content and menu edits can be tested on the preview itself. $HEAD is
+# the source branch of the PR. Note: this cannot work for PRs from forks
+# (Git Gateway can only write to this repository).
+[context.deploy-preview]
+  command = "mkdocs build -d site/badge_2026 && sed -i \"s|branch: main|branch: $HEAD|\" site/badge_2026/admin/config.yml && printf '<meta http-equiv=\"refresh\" content=\"0;url=/badge_2026/\">' > site/index.html"
+
 [[redirects]]
   from = "/admin"
   to = "/badge_2026/admin/"

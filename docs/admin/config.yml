@@ -3,6 +3,11 @@ backend:
   branch: main
 
 # Netlify Identity + Git Gateway handles hosted login and repo access.
+# Note: the CMS always edits the branch above, also on deploy previews.
+# To test the CMS against your local checkout: run "npx decap-server" in
+# the repo root, serve the site locally and open /admin/ on localhost.
+local_backend: true
+
 publish_mode: editorial_workflow
 
 site_url: https://fri3d2026.netlify.app/badge_2026/

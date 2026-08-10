@@ -38,7 +38,11 @@ def on_config(config):
     nav_path = os.path.join(root, "nav.yml")
     docs_dir = config["docs_dir"]
     with open(nav_path, encoding="utf-8") as handle:
-        menu = yaml.safe_load(handle)["menu"]
+        menu = (yaml.safe_load(handle) or {}).get("menu") or []
+    if not menu:
+        # Empty or missing menu (e.g. a bad CMS save): keep MkDocs'
+        # automatic nav instead of shipping an empty sidebar.
+        return config
 
     translations = {}
 

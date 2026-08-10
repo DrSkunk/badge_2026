@@ -660,6 +660,7 @@ html.fri3d-no-scroll {
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  overscroll-behavior: contain; /* wheel past the list end must not scroll the page */
   box-sizing: border-box;
 }
 
@@ -789,12 +790,53 @@ html.fri3d-no-scroll {
   border-radius: .75rem 0 0 0;
 }
 
+/* The sidebar layout wrapper. In the sticky layout this is the element that
+   sticks and gets the viewport cap, so the grid item itself can stay
+   size-contained. */
+.fri3d-index__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* No percentage heights below the wrapper — they don't resolve under its
+   auto height + max-height clamp (the list then grows to full content and
+   the bottom items get clipped). Flex hands out the real space instead. */
+.fri3d-index__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.fri3d-index__list,
+.fri3d-index__detail {
+  height: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* The sidebar must contribute ZERO height to the grid row — otherwise a long
+   component list (or a zoomed-out page) stretches the row and leaves an empty
+   band under the board. contain:size lets the diagram+board column alone set
+   the row height; the inner wrapper does the sticking. */
 .fri3d-diagram--has-physical .fri3d-index {
+  contain: size;
+  display: block;
+  height: auto;
+  overflow: visible;
+}
+
+.fri3d-diagram--has-physical .fri3d-index__inner {
   position: sticky;
   top: 2.9rem; /* just below the sticky Material header */
-  align-self: start;
-  height: calc(100vh - 3.5rem);
-  max-height: 100%;
+  height: auto;
+  /* Cap by the viewport AND by the component column (as a measured length —
+     a % can't resolve against the size-contained cell): keeps the list
+     scrollable within the viewport and stops it hanging out of the component
+     bottom over the page text below. */
+  max-height: min(var(--fri3d-column-h, 100vh), calc(100vh - 3.5rem));
+  background: var(--fd-surface);
   border-radius: 0 .75rem .75rem 0;
 }
 
@@ -834,8 +876,17 @@ html.fri3d-no-scroll {
 
 .fri3d-diagram__shell:fullscreen .fri3d-index,
 .fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-index {
+  contain: none;
+  display: flex;
+  overflow: hidden;
   position: static;
   height: 100%;
+  max-height: none;
+}
+
+.fri3d-diagram__shell:fullscreen .fri3d-index__inner,
+.fri3d-diagram__shell.is-pseudo-fullscreen .fri3d-index__inner {
+  position: static;
   max-height: none;
 }
 
@@ -1019,11 +1070,19 @@ html.fri3d-no-scroll {
   }
 
   .fri3d-diagram--has-physical .fri3d-index {
-    position: static;
+    contain: none;
+    display: flex;
+    overflow: hidden;
     align-self: stretch;
     height: auto;
     max-height: 45vh;
     border-radius: 0 0 .75rem .75rem;
+  }
+
+  .fri3d-diagram--has-physical .fri3d-index__inner {
+    position: static;
+    max-height: none;
+    border-radius: 0;
   }
 
   .fri3d-physical {

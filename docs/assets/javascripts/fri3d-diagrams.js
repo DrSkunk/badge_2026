@@ -320,13 +320,15 @@
     sidebar.className = 'fri3d-index';
     sidebar.setAttribute('aria-label', t.components);
     sidebar.innerHTML = `
-      <div class="fri3d-index__header">
-        <strong>${esc(t.components)}</strong>
-        <span>${esc(t.sidebarHint)}</span>
-      </div>
-      <div class="fri3d-index__body">
-        <div class="fri3d-index__list"></div>
-        <div class="fri3d-index__detail" hidden aria-live="polite"></div>
+      <div class="fri3d-index__inner">
+        <div class="fri3d-index__header">
+          <strong>${esc(t.components)}</strong>
+          <span>${esc(t.sidebarHint)}</span>
+        </div>
+        <div class="fri3d-index__body">
+          <div class="fri3d-index__list"></div>
+          <div class="fri3d-index__detail" hidden aria-live="polite"></div>
+        </div>
       </div>
     `;
 
@@ -713,6 +715,14 @@
 
       host.classList.add('fri3d-diagram--has-physical');
       main.append(section);
+
+      // The sticky sidebar caps its height at min(component column, viewport).
+      // The column height must be a real length (a percentage cannot resolve
+      // against the size-contained sidebar cell), so measure it.
+      new ResizeObserver(entries => {
+        const height = entries[entries.length - 1]?.contentRect.height;
+        if (height) host.style.setProperty('--fri3d-column-h', `${Math.round(height)}px`);
+      }).observe(main);
     }
 
     function clearSelection() {

@@ -121,9 +121,9 @@
           {label:'STEMMA QT', match:['Stemma QT connector'], x:93.4,y:24.3,w:5.6,h:13.8},
           {label:'Headset', match:['Headset TRRS Connector'], x:80.7,y:1.0,w:5.6,h:21.5},
           {label:'I²S DAC', match:['I2S DAC'], x:78.5,y:43.5,w:7.5,h:15.0},
-          {label:'Mic amplifier', match:['Microphone Amplifier','Microphone'], x:67.8,y:11.5,w:4.6,h:9.0},
-          {label:'Battery charger', match:['Battery Charger'], x:71.8,y:65.0,w:5.5,h:10.5},
-          {label:'3.3V rails', match:['3.3V Power rails'], x:33.2,y:19.0,w:8.7,h:13.5},
+          {label:'Mic amplifier', match:['Microphone Amplifier','Microphone'], x:69,y:15.5,w:4.6,h:10.0},
+          {label:'Battery charger', match:['Battery Charger'], x:70.0,y:65.0,w:7,h:14.5},
+          {label:'3.3V rails', match:['3.3V Power rails'], rects:[{x:32.7,y:20.0,w:4.7,h:7.5},{x:18.2,y:37.6,w:4.7,h:10}]},
           {label:'Badge Link', match:['Badge Link'], x:0.8,y:68.0,w:6.4,h:24.0}
         ]
       }

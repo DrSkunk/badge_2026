@@ -41,3 +41,72 @@ collections:
         label: Content
         widget: markdown
         i18n: true
+
+  # Left sidebar menu of the website. Edits nav.yml in the repo root;
+  # MkDocs builds the navigation from that file. Drag items to reorder.
+  - name: navigation
+    label: Menu
+    files:
+      - name: nav
+        label: Website menu (left sidebar)
+        file: nav.yml
+        fields:
+          - name: menu
+            label: Menu items
+            label_singular: menu item
+            widget: list
+            summary: "{{fields.title_nl}}"
+            types:
+              - name: page
+                label: Page
+                widget: object
+                summary: "{{fields.page}}"
+                fields:
+                  - name: page
+                    label: Page
+                    widget: relation
+                    collection: docs
+                    value_field: "{{slug}}"
+                    search_fields: [title]
+                    display_fields: [title]
+                  - name: title_nl
+                    label: Menutitel (NL) — leeg laten voor de paginatitel
+                    widget: string
+                    required: false
+                  - name: title_en
+                    label: Menu title (EN) — leave empty for the page title
+                    widget: string
+                    required: false
+              - name: section
+                label: Section (group of pages)
+                widget: object
+                summary: "{{fields.title_nl}}"
+                fields:
+                  - name: title_nl
+                    label: Sectietitel (NL)
+                    widget: string
+                  - name: title_en
+                    label: Section title (EN)
+                    widget: string
+                    required: false
+                  - name: pages
+                    label: Pages in this section
+                    label_singular: page
+                    widget: list
+                    summary: "{{fields.page}}"
+                    fields:
+                      - name: page
+                        label: Page
+                        widget: relation
+                        collection: docs
+                        value_field: "{{slug}}"
+                        search_fields: [title]
+                        display_fields: [title]
+                      - name: title_nl
+                        label: Menutitel (NL) — leeg laten voor de paginatitel
+                        widget: string
+                        required: false
+                      - name: title_en
+                        label: Menu title (EN) — leave empty for the page title
+                        widget: string
+                        required: false

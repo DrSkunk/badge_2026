@@ -61,6 +61,9 @@ That works too! You can always contribute directly through [GitHub](https://gith
 
 ### Adding a page to the menu
 
-The menu on the left is defined by the `nav:` block in [`mkdocs.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/mkdocs.yml). When you create a new page, add one line in the right place in that block, using the Dutch title and the file name **without** the language suffix (so `my-page.md`, not `my-page.nl.md`). Add the English title under `nav_translations` in the same file. The menu order is simply the order of the lines.
+You can change the menu on the left in two ways:
+
+- **Through the CMS:** open the **Menu** collection in the admin screen. There you can drag items to reorder them, pick pages from a list, and set a Dutch and English title per item.
+- **Through GitHub:** the menu lives in [`nav.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/nav.yml) in the repository root. Each item refers to the file name **without** the language suffix (so `my-page`, not `my-page.nl`). The menu order is simply the order in the file.
 
 Thank you again for helping! 💚

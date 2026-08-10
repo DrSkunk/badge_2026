@@ -1,0 +1,31 @@
+# Left sidebar menu of the documentation site.
+#
+# Order here = order in the sidebar. Edit this file directly, or use the
+# "Menu" collection in the CMS (/badge_2026/admin/), which edits this file
+# with drag-and-drop ordering.
+#
+# "page" is the file name in docs/ WITHOUT the language suffix (badge, not
+# badge.nl). Menu labels come from the page's own title; add title_nl /
+# title_en on an item only to override that. Sections have no page behind
+# them, so they always need title_nl (and title_en if different).
+menu:
+  - type: page
+    page: index
+  - type: section
+    title_nl: Hardware
+    pages:
+      - page: badge
+      - page: communicator
+      - page: dj
+      - page: lora
+      - page: tof
+      - page: mirror
+  - type: section
+    title_nl: Software
+    pages:
+      - page: mcp
+      - page: programming
+        title_nl: Programmeer je eigen app
+        title_en: Program your own app
+  - type: page
+    page: contribute

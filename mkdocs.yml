@@ -36,28 +36,9 @@ theme:
     - content.code.select
     - content.code.annotate
 
-# ------------------------------------------------------------------
-# Left sidebar menu (order matters, top to bottom).
-#
-# Adding a page? Add one line below with the Dutch title and the base
-# file name WITHOUT the language suffix: use "mijn-pagina.md", not
-# "mijn-pagina.nl.md" — the i18n plugin picks the right language file.
-# Then add the English title for it under "nav_translations" in the
-# i18n plugin section further down.
-# ------------------------------------------------------------------
-nav:
-  - Start: index.md
-  - Hardware:
-      - Badge: badge.md
-      - Communicator: communicator.md
-      - DJ Add-on: dj.md
-      - LoRa kit: lora.md
-      - ToF Sensor: tof.md
-      - SAO Mirror: mirror.md
-  - Software:
-      - MCP-server: mcp.md
-      - Programmeren: programming.md
-  - Bijdragen aan docs: contribute.md
+# The left sidebar menu is defined in nav.yml (repo root) and loaded by
+# the mkdocs_hooks/nav_from_yaml.py hook. Edit nav.yml directly, or use
+# the "Menu" collection in the CMS.
 
 markdown_extensions:
   - toc
@@ -72,6 +53,7 @@ markdown_extensions:
 
 hooks:
   - mkdocs_hooks/i18n_theme_compat.py
+  - mkdocs_hooks/nav_from_yaml.py
 
 plugins:
   - search
@@ -80,13 +62,8 @@ plugins:
       languages:
         - locale: en
           name: English
-          # English titles for the Dutch nav labels above.
-          # New page? Add a "Dutch title: English title" line here.
-          nav_translations:
-            Start: Home
-            MCP-server: MCP Server
-            Programmeren: Programming
-            Bijdragen aan docs: Contribute to docs
+          # English menu titles are injected from nav.yml by
+          # mkdocs_hooks/nav_from_yaml.py.
         - locale: nl
           default: true
           name: Nederlands

@@ -63,6 +63,9 @@ Ook goed! Je kan altijd rechtstreeks bijdragen via [GitHub](https://github.com/F
 
 ### Een pagina toevoegen aan het menu
 
-Het menu aan de linkerkant wordt bepaald door het `nav:`-blok in [`mkdocs.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/mkdocs.yml). Maak je een nieuwe pagina, voeg dan één regel toe op de juiste plaats in dat blok, met de Nederlandse titel en de bestandsnaam **zonder** taalsuffix (dus `mijn-pagina.md`, niet `mijn-pagina.nl.md`). Zet de Engelse titel erbij onder `nav_translations` in hetzelfde bestand. De volgorde van het menu is gewoon de volgorde van de regels.
+Het menu aan de linkerkant kan je op twee manieren aanpassen:
+
+- **Via het CMS:** open de collectie **Menu** in het beheerscherm. Daar kan je items verslepen om de volgorde te wijzigen, pagina's kiezen uit een lijst en per item een Nederlandse en Engelse titel invullen.
+- **Via GitHub:** het menu staat in [`nav.yml`](https://github.com/Fri3dCamp/badge_2026/blob/main/nav.yml) in de root van de repository. Elk item verwijst naar de bestandsnaam **zonder** taalsuffix (dus `mijn-pagina`, niet `mijn-pagina.nl`). De volgorde van het menu is gewoon de volgorde in het bestand.
 
 Nogmaals bedankt om mee te helpen! 💚
